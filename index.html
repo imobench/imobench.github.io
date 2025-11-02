@@ -54,15 +54,32 @@
     img {
         max-width: 100%;
     }
+    header-logo {
+        /* Set a fixed height as defined in your HTML (height="50") */
+        height: 50px; 
+        
+        /* Crucial for scaling: ensures the width adjusts automatically */
+        width: auto; 
+        
+        /* Optional: Basic display settings for cleaner integration */
+        display: block; 
+        /* margin: 0;  */
+        margin-right: auto;
+        margin-left: 0;
+    }
 </style>
 </head>
 <body>
 
-<div style="text-align: left;">
-  <img src="imgs/Google_DeepMind_Logo_rgb_3320x512px.png" height="200">
+<div>
+  <img src="imgs/Google_DeepMind_Logo_rgb_3320x512px.png" 
+       height="50" 
+       class="header-logo">
 </div>
     
-<h1>IMO Bench - Towards Robust Mathematical Reasoning and <br> Winning Gold at the International Mathematical Olympiad 🥇</h1>
+<h1>IMO Bench - Towards Robust Mathematical Reasoning</h1>
+
+ <!-- and <br> Winning Gold at the International Mathematical Olympiad 🥇 -->
 
 <p>In July 2025, we celebrated a historic <a href="https://deepmind.google/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/">achievement</a>: our advanced Gemini model with Deep Think technology reached a gold-medal standard at the International Mathematical Olympiad (IMO). This was a landmark moment for AI. But the win wasn't just about getting strong performances at IMO problems - it was about building a system capable of deep, robust mathematical reasoning.</p>
 
@@ -73,8 +90,8 @@
 <div style="text-align: center;">
 </div>
 
-<div style="text-align: center;">
-  <img src="imgs/Main-Plot.png" alt="Correlation between human and automatic evaluations on IMO-ProofBench" height="500">
+<div>
+  <img src="imgs/Google_DeepMind_Logo_rgb_3320x512px.png" height="50" class="header-logo">
 </div>
 
 <blockquote>
