@@ -67,6 +67,27 @@
         margin-right: auto;
         margin-left: 0;
     }
+	/* Updated pre block for better appearance */
+	pre {
+		padding: 16px;
+		overflow-x: auto; /* Use x-scroll for overflow code blocks */
+		font-size: 85%;
+		line-height: 1.45;
+		background-color: #e9eef2; /* Slightly darker than light gray */
+		border-radius: 6px;
+		border: 1px solid #d1d9e0;
+	}
+	ul { padding-left: 2em; list-style: disc; }
+	img { max-width: 100%; height: auto; }
+
+	/* Custom class for the scrollable buttons in the header, removing base button styles */
+	.scroll-button a {
+		all: unset; /* Remove all default link styles */
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		white-space: nowrap;
+	}
 </style>
 </head>
 <body>
