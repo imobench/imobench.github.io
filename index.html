@@ -1,249 +1,273 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IMO Bench</title>
-<style>
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-        line-height: 1.6;
-        color: #24292e;
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 20px;
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>IMO-Bench: Towards Robust Mathematical Reasoning | Google DeepMind</title>
+<meta name="keywords" content="IMO-Bench, mathematical reasoning, proof writing, autograder, benchmark, AI reasoning, Deep Think, Gemini, EMNLP 2025" />
+<meta name="description" content="IMO-Bench is a suite of benchmarks for robust mathematical reasoning, including AnswerBench, ProofBench, and GradingBench, introduced at EMNLP 2025 by Google DeepMind." />
+<meta name="author" content="Google DeepMind" />
+<meta name="googlebot" content="noarchive" />
+<meta name="robots" content="noarchive" />
+<meta name="theme-color" content="#2c3e50">
+<meta name="ROBOTS" content="index, follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" type="image/png" href="imgs/favicon.png"/>
+<link rel="canonical" href="https://imobench.github.io/"/>
+<meta property="og:title" content="IMO-Bench: Towards Robust Mathematical Reasoning | Google DeepMind">
+<meta property="og:image" content="https://imobench.github.io/imgs/thumbnail-share.jpg">
+<meta property="og:image:secure_url" content="https://imobench.github.io/imgs/thumbnail-share.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="IMO-Bench: Towards Robust Mathematical Reasoning - correlation between human and automatic evaluations">
+<meta property="og:site_name" content="IMO-Bench">
+<meta property="og:description" content="IMO-Bench is a suite of benchmarks for robust mathematical reasoning, including AnswerBench, ProofBench, and GradingBench, introduced at EMNLP 2025 by Google DeepMind.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://imobench.github.io/imgs/thumbnail-share.jpg">
+<meta name="twitter:creator" content="Google DeepMind">
+<meta name="twitter:title" content="IMO-Bench: Towards Robust Mathematical Reasoning | Google DeepMind">
+<meta name="twitter:description" content="IMO-Bench is a suite of benchmarks for robust mathematical reasoning, including AnswerBench, ProofBench, and GradingBench, introduced at EMNLP 2025 by Google DeepMind.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
+                    mono: ['SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', 'monospace'],
+                },
+            }
+        }
     }
-    h1, h2, h3 {
-        border-bottom: 1px solid #eaecef;
-        padding-bottom: .3em;
-        margin-top: 24px;
-    }
-    p {
-        margin-top: 0;
-        margin-bottom: 16px;
-    }
-    a {
-        color: #0366d6;
-        text-decoration: none;
-    }
-    a:hover {
-        text-decoration: underline;
-    }
-    blockquote {
-        margin: 0 0 16px 0;
-        padding: 0 1em;
-        color: #6a737d;
-        border-left: 0.25em solid #dfe2e5;
-    }
-    pre {
-        padding: 16px;
-        overflow: auto;
-        font-size: 85%;
-        line-height: 1.45;
-        background-color: #f6f8fa;
-        border-radius: 6px;
-    }
-    code {
-        font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
-    }
-    ul {
-        padding-left: 2em;
-        margin-top: 0;
-        margin-bottom: 16px;
-    }
-    img {
-        max-width: 100%;
-    }
-    header-logo {
-        /* Set a fixed height as defined in your HTML (height="50") */
-        height: 50px; 
-        
-        /* Crucial for scaling: ensures the width adjusts automatically */
-        width: auto; 
-        
-        /* Optional: Basic display settings for cleaner integration */
-        display: block; 
-        /* margin: 0;  */
-        margin-right: auto;
-        margin-left: 0;
-    }
-
-    /* --- New Button Styling --- */
-    .action-button {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px; /* Space between icon and text */
-        padding: 10px 18px;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 1;
-        text-decoration: none; /* Important to remove default link underline */
-        color: #fff;
-        background-color: #2c3e50; /* Dark Blue/Gray */
-        border: none;
-        border-radius: 10px; /* Nicely rounded corners */
-        transition: background-color 0.15s ease, box-shadow 0.15s ease;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-    }
-
-    .action-button:hover {
-        background-color: #34495e; /* Slightly darker on hover */
-        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-        text-decoration: none; /* Ensure no underline on hover either */
-    }
-
-    .action-button i {
-        font-size: 1.1em; /* Adjust icon size */
-    }
-
-</style>
+</script>
 <!-- Load Phosphor Icons for the buttons -->
 <script src="https://unpkg.com/@phosphor-icons/web@2.0.3/dist/assets/index.js"></script>
 </head>
-<body>
-
-<div>
-  <img src="imgs/Google_DeepMind_Logo_rgb_3320x512px.png" 
-       height="50" 
-       class="header-logo">
-</div>
-    
-<h1>Towards Robust Mathematical Reasoning</h1>
-
-<!-- AUTHORS -->
-<div class="text-lg text-gray-700 mb-8">
-    <!-- Author Row 1 -->
-    <p class="mb-2">
-        Thang Luong<span class="superscript-symbol">◊</span>,
-        Dawsen Hwang<span class="superscript-symbol">*</span>,
-        Hoang Nguyen<span class="superscript-symbol">*†</span>,
-        Golnaz Ghiasi<span class="superscript-symbol">*</span>,
-        Yuri Chervonyi<span class="superscript-symbol">*</span>,
-        Insuk Seo<span class="superscript-symbol">*</span>,
-        Junsu Kim<span class="superscript-symbol">*</span>,
-	<br>
-        Garrett Bingham,
-        Jonathan Lee,
-        Swaroop Mishra<span class="superscript-symbol">†</span>,
-        Alex Zhai,
-        Clara Huiyi Hu,
-        Henryk Michalewski,
-	<br>
-        Jimin Kim<span class="superscript-symbol">†</span>,
-        Jeonghyun Ahn<span class="superscript-symbol">†</span>,
-        Junhwi Bae<span class="superscript-symbol">†</span>,
-        Xingyou Song,
-        Trieu H. Trinh,
-        Quoc V. Le,
-        Junehyuk Jung<span class="superscript-symbol">◊</span>
-    </p>
-</div>
-
-<!-- CORRESPONDENCE AND AFFILIATIONS -->
-<div class="text-md text-gray-600 space-y-2 mb-16 mx-auto w-fit text-left">
-    <div class="flex items-start">
-        <span class="affiliation-symbol">◊Corresponding authors: thangluong@google.com, junehuyk@google.com</span>
+<body class="bg-gray-900/5 text-gray-900 antialiased py-4" >
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 bg-white/95 rounded-2xl shadow-2xl ring-1 ring-black/5">
+    <!-- Header Logo -->
+    <div class="mb-6">
+        <img src="imgs/Google_DeepMind_Logo_rgb_3320x512px.png" 
+             height="32" 
+             class="h-9 w-auto">
     </div>
-    <div class="flex items-start">
-        <span class="affiliation-symbol">*Core and equal contributors</span>
-        <span class="affiliation-symbol">†Work previously conducted under Google DeepMind.</span>
+    
+    <!-- Main Title -->
+     <h1 class="text-4xl md:text-4xl font-bold text-gray-900 mb-6 pb-4 border-b border-gray-200 flex items-center gap-4">
+         <img src="imgs/logo-imobench.png" class="h-16 w-auto rounded"> Towards Robust Mathematical Reasoning
+    </h1>
+
+    <!-- AUTHORS -->
+    <div class="text-base md:text-lg text-gray-800 mb-6 leading-relaxed">
+        <p class="mb-2 text-base">
+           
+           Thang Luong<sup class="text-blue-600 font-semibold">◊</sup>,
+            Dawsen Hwang<sup class="text-blue-600 font-semibold">*</sup>,
+            Hoang Nguyen<sup class="text-blue-600 font-semibold">*†</sup>
+        </p>
+        <p class="mb-2 text-base">
+           
+          
+            Golnaz Ghiasi<sup class="text-blue-600 font-semibold">*</sup>,
+            Yuri Chervonyi<sup class="text-blue-600 font-semibold">*</sup>,
+            Insuk Seo<sup class="text-blue-600 font-semibold">*</sup>,
+            Junsu Kim<sup class="text-blue-600 font-semibold">*</sup>
+        </p>
+        <p class="mb-2  text-base">
+           
+                Garrett Bingham,
+            Jonathan Lee,
+            Swaroop Mishra<sup class="text-blue-600 font-semibold">†</sup>,
+            Alex Zhai,
+            Clara Huiyi Hu,
+            Henryk Michalewski
+        </p>
+        <p class="mb-2 text-base">
+           Jimin Kim<sup class="text-blue-600 font-semibold">†</sup>,
+            Jeonghyun Ahn<sup class="text-blue-600 font-semibold">†</sup>,
+            Junhwi Bae<sup class="text-blue-600 font-semibold">†</sup>,
+            Xingyou Song,
+            Trieu H. Trinh,
+            Quoc V. Le,
+            Junehyuk Jung<sup class="text-blue-600 font-semibold">◊</sup>
+        </p>
+    </div>
+
+    <!-- CORRESPONDENCE AND AFFILIATIONS -->
+    <div class="text-sm md:text-base text-gray-600 space-y-2 mb-8 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+        <div>
+            <span class="font-semibold text-blue-700">◊</span> Corresponding authors: <a href="mailto:thangluong@google.com" class="text-blue-600 hover:text-blue-800 hover:underline">thangluong@google.com</a>, <a href="mailto:junehuyk@google.com" class="text-blue-600 hover:text-blue-800 hover:underline">junehuyk@google.com</a>
+        </div>
+        <div>
+            <span class="font-semibold text-blue-700">*</span> Core and equal contributors
+        </div>
+        <div>
+            <span class="font-semibold text-blue-700">†</span> Work previously conducted under Google DeepMind.
+        </div>
+    </div>
+
+    <!-- NAVIGATION BUTTONS -->
+    <div class="grid grid-cols-2 sm:flex sm:flex-wrap gap-4 mb-10">
+        <!-- Button 1: Paper -->
+        <a href="https://aclanthology.org/2025.emnlp-main.1794/" 
+           class="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 text-sm sm:text-base font-medium text-blue-600 bg-white border border-blue-600 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.7997 2.21048C15.3897 1.80048 14.6797 2.08048 14.6797 2.65048V6.14048C14.6797 7.60048 15.9197 8.81048 17.4297 8.81048C18.3797 8.82048 19.6997 8.82048 20.8297 8.82048C21.3997 8.82048 21.6997 8.15048 21.2997 7.75048C19.8597 6.30048 17.2797 3.69048 15.7997 2.21048Z" fill="#292D32"/>
+            <path d="M20.5 10.19H17.61C15.24 10.19 13.31 8.26 13.31 5.89V3C13.31 2.45 12.86 2 12.31 2H8.07C4.99 2 2.5 4 2.5 7.57V16.43C2.5 20 4.99 22 8.07 22H15.93C19.01 22 21.5 20 21.5 16.43V11.19C21.5 10.64 21.05 10.19 20.5 10.19ZM11.5 17.75H7.5C7.09 17.75 6.75 17.41 6.75 17C6.75 16.59 7.09 16.25 7.5 16.25H11.5C11.91 16.25 12.25 16.59 12.25 17C12.25 17.41 11.91 17.75 11.5 17.75ZM13.5 13.75H7.5C7.09 13.75 6.75 13.41 6.75 13C6.75 12.59 7.09 12.25 7.5 12.25H13.5C13.91 12.25 14.25 12.59 14.25 13C14.25 13.41 13.91 13.75 13.5 13.75Z" fill="#292D32"/>
+            </svg>
+            
+            <span>Paper</span>
+        </a>
+
+        <!-- Button 2: Dataset -->
+        <a href="https://github.com/google-deepmind/superhuman/tree/main/imobench" 
+           class="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 text-sm sm:text-base font-medium text-blue-600 bg-white border border-blue-600 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+           <svg height="24" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" class="octicon octicon-mark-github v-align-middle">
+            <path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"></path>
+        </svg>
+            <span> Dataset</span>
+        </a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
+            Introduction
+        </h2>
+        <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed space-y-4">
+            <p>In July 2025, we celebrated a historic <a href="https://deepmind.google/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/" class="text-blue-600 hover:text-blue-800 hover:underline font-medium">achievement</a>: our advanced Gemini model with Deep Think technology reached a gold-medal standard at the International Mathematical Olympiad (IMO). This was a landmark moment for AI. But the win wasn't just about getting strong performances at IMO problems - it was about building a system capable of deep, robust mathematical reasoning.</p>
+ <!-- Main Plot Image -->
+ <div class="my-8 flex justify-center">
+    <div class="bg-white p-4 rounded-xl shadow-lg">
+        <img src="imgs/Main-Plot.png" 
+             alt="Correlation between human and automatic evaluations on IMO-ProofBench" 
+             class="max-w-full h-auto rounded-lg">
     </div>
 </div>
+        <blockquote class="my-6 text-gray-700 italic">
+            <p class="mb-0 text-base">IMO-ProofBench, a benchmark in IMO-Bench, for measuring proof-writing capabilities. We demonstrated high correlations between human and automatic evaluations on a variety of public models, including our IMO-gold model.</p>
+        </blockquote>
+            <p>At this year <a href="https://2025.emnlp.org/" class="text-blue-600 hover:text-blue-800 hover:underline font-medium">EMNLP 2025</a>, we are excited to introduce IMO-Bench, a suite of advanced reasoning benchmarks that played a crucial role in our IMO-gold journey and were designed to push the frontiers of mathematical reasoning in AI. Vetted by a panel of IMO medalists and mathematicians, IMO-Bench specifically targets the level of IMO due to its notoriously difficult problems, which require both rigorous multi-step reasoning and creativity beyond simple application of known formulas. IMO-Bench consists of three benchmarks that judge models on diverse capabilities: <em >IMO-AnswerBench</em> - a large-scale test on getting the right answer, <em>IMO-ProofBench</em> - a next-level evaluation for proof writing, and <em>IMO-GradingBench</em> to enable further progress in automatic evaluation of long-form answers.</p>
 
-<!-- NAVIGATION BUTTONS (Footer Area) -->
-<div style="display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 16px; margin-bottom: 24px;">
-    
-    <!-- Button 1: Paper -->
-    <a href="https://aclanthology.org/2025.emnlp-main.1794/" class="action-button">
-        <i class="ph ph-file-text"></i>
-        📄 Paper
-    </a>
+            <p>A key highlight of our work is to show that autograders built with Gemini reasoning correlate well with human evaluations on IMO-ProofBench, as illustrated below, for a wide range of foundation models. This was achieved thanks to the accompanying grading schemes in IMO-Bench, which are suitable for both human experts and automated systems. We ultimately hope to steer the community's focus from final answers to the proofs themselves, enabling a more rigorous assessment of AI reasoning processes. We <a href="https://github.com/google-deepmind/superhuman/tree/main/imobench/" class="text-blue-600 hover:text-blue-800 hover:underline font-medium">release</a> IMO-Bench together with rich grading data to the community to help enable further advancements towards robust mathematical reasoning.</p>
+        </div>
 
-    <!-- Button 2: Dataset -->
-    <a href="https://github.com/google-deepmind/superhuman/tree/main/imobench" class="action-button">
-        <i class="ph ph-git-branch"></i>
-        🥇 Dataset
-    </a>
-</div>
+        <blockquote class="border-l-4 border-blue-500 pl-6 py-4 my-6 bg-blue-50 rounded-r-lg text-gray-700">
+            <p class="mb-0   text-blue-800 italic text-xl mb-6">IMO-Bench is an impressive collection of high quality data for AI evaluation covering a diverse and representative set of topics and difficulties in high school level math competitions. I am very pleased to see this benchmark being used in developing an AI that achieved gold medal standard this year.</p>
+            <p class="mb-0  text-blue-800 text-xl">Yufei Zhao (Associate Professor of Mathematics, MIT).</p>
+        </blockquote>
+       
+    </section>
 
-<h2>Introduction</h2>
-<p>In July 2025, we celebrated a historic <a href="https://deepmind.google/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/">achievement</a>: our advanced Gemini model with Deep Think technology reached a gold-medal standard at the International Mathematical Olympiad (IMO). This was a landmark moment for AI. But the win wasn't just about getting strong performances at IMO problems - it was about building a system capable of deep, robust mathematical reasoning.</p>
+    <!-- IMO-AnswerBench Section -->
+    <section class="mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
+            IMO-AnswerBench
+        </h2>
+        <div class="prose prose-lg max-w-none text-gray-900 leading-relaxed space-y-4">
+            <p>The first benchmark, <em>IMO-AnswerBench</em>, consists of 400 problems with verifiable answers carefully chosen from past Olympiad competitions. The problems span across four IMO categories (Algebra, Combinatorics, Geometry, and Number Theory) and are altered by experts to avoid memorization. For each category, the benchmark contains 100 problems across four levels of difficulty: pre-IMO (middle school or pre-Math Olympiad problems), IMO-Easy (equivalent to Problem 1 or Problem 4 at the IMO), IMO-Medium (equivalent to Problem 2 or Problem 5 at the IMO) and IMO-Hard (equivalent to Problem 3 or Problem 6 at the IMO or post-Math Olympiad problems). Problems were chosen from a variety of topics whose solutions require different problem solving techniques to ensure a diverse representation of topics, ideas, and domain knowledge as illustrated below.</p>
+        </div>
 
-<p>At this year <a href="https://2025.emnlp.org/">EMNLP 2025</a>, we are excited to introduce IMO-Bench, a suite of advanced reasoning benchmarks that played a crucial role in our IMO-gold journey and were designed to push the frontiers of mathematical reasoning in AI. Vetted by a panel of IMO medalists and mathematicians, IMO-Bench specifically targets the level of IMO due to its notoriously difficult problems, which require both rigorous multi-step reasoning and creativity beyond simple application of known formulas. IMO-Bench consists of three benchmarks that judge models on diverse capabilities: <em>IMO-AnswerBench</em> - a large-scale test on getting the right answer, <em>IMO-ProofBench</em> - a next-level evaluation for proof writing, and <em>IMO-GradingBench</em> to enable further progress in automatic evaluation of long-form answers.</p>
+        <div class="my-8 flex justify-center">
+            <div class="bg-white p-4 rounded-xl shadow-lg">
+                <img src="imgs/imo_answer_bench.png" 
+                     alt="IMO-AnswerBench Topic Distribution" 
+                     class="max-w-full h-auto rounded-lg">
+            </div>
+        </div>
 
-<p>A key highlight of our work is to show that autograders built with Gemini reasoning correlate well with human evaluations on IMO-ProofBench, as illustrated below, for a wide range of foundation models. This was achieved thanks to the accompanying grading schemes in IMO-Bench, which are suitable for both human experts and automated systems. We ultimately hope to steer the community's focus from final answers to the proofs themselves, enabling a more rigorous assessment of AI reasoning processes. We <a href="https://github.com/google-deepmind/superhuman/tree/main/imobench/">release</a> IMO-Bench together with rich grading data to the community to help enable further advancements towards robust mathematical reasoning.</p>
+        <blockquote class="my-6 italic">
+            <p class="mb-0 text-gray-600">Topic distribution by category in IMO-AnswerBench. Number Theory and Combinatorics have the most topics which reflect the broad knowledge required to solve these problems while Geometry is mostly skewed towards angle and sidelength computation problems due to the nature of the short answer benchmark.</p>
+        </blockquote>
 
-<div style="text-align: center;">
-</div>
+        <div class="prose prose-lg max-w-none text-gray-900 leading-relaxed space-y-4">
+            <p>Our Gemini Deep Think (IMO Gold) model achieved an overall accuracy of <strong class="text-blue-600">80.0%</strong>, surpassing the best non-Gemini model (Grok 4) by 6.9% and the best open-weight model (DeepSeek R1) by 19.2%. Latest models such as GPT-5 are still struggling with overall accuracy of only 65.6% respectively. We show breakdowns of performances across the four categories (Algebra, Combinatorics, Geometry, Number Theory) in the figure below. Generally, models perform the worst in Combinatorics, potentially highlighting difficulties with advanced abstract reasoning.</p>
+        </div>
 
-<div style="text-align: center;">
+        <div class="my-8 flex justify-center">
+            <div class="bg-white p-4 rounded-xl shadow-lg">
+                <img src="imgs/model_accuracy_answerbench.png" 
+                     alt="Model Accuracy on IMO-AnswerBench"
+                     class="max-w-full h-auto rounded-lg">
+            </div>
+        </div>
 
-  <img src="imgs/Main-Plot.png" alt="Correlation between human and automatic evaluations on IMO-ProofBench" height="500">
+        <blockquote class="border-blue-500 my-6 rounded-r-lg  italic">
+            <p class="mb-0 text-gray-600">Model accuracy on IMO-AnswerBench. Results are averaged over 8 runs, except for Gemini 2.5 Deep Think and Gemini Deep Think (IMO Gold) (single run).</p>
+        </blockquote>
+    </section>
 
-</div>
+    <!-- IMO-ProofBench Section -->
+    <section class="mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
+            IMO-ProofBench
+        </h2>
+        <div class="prose prose-lg max-w-none text-gray-900 leading-relaxed space-y-4">
+            <p>While the final answer accuracy provided by IMO-AnswerBench offers a valuable metric for measuring mathematical abilities, it is insufficient for a comprehensive assessment of mathematical reasoning. We, hence, introduce <em>IMO-ProofBench</em> as the next-level evaluation designed to evaluate the ability of AI models in constructing rigorous and valid mathematical arguments. With 60 proof-based problems, the benchmark is divided into two subsets: a basic set covering pre-IMO to IMO-Medium difficulty levels, and an advanced set featuring novel, highly challenging problems simulating complete IMO examinations, up to IMO-Hard level. Our goal for the basic set is to assess models in their early stages of development. Sufficiently strong performance on the basic set would justify progression to the advanced set.</p>
 
-<blockquote>
-<p>IMO-ProofBench, a benchmark in IMO-Bench, for measuring proof-writing capabilities. We demonstrated high correlations between human and automatic evaluations on a variety of public models, including our IMO-gold model.</p>
-</blockquote>
+            <p>Performances on the basic IMO-ProofBench varies significantly: while Gemini Deep Think (IMO Gold) achieves a high score of <strong class="text-blue-600">89.0%</strong>, most models score below 60%, indicating that there is still considerable room for improvements. The advanced IMO-ProofBench proves to be a more significant challenge that all non-Gemini models score below 25%. Our Gemini Deep Think (IMO Gold) model achieved a state-of-the art score of <strong class="text-blue-600">65.7%</strong> according to human evaluations. This represents a substantial leap in capability, but its distance from a perfect score indicates that even the strongest models have room for growth in sophisticated mathematical reasoning.</p>
+        </div>
 
-<h2>IMO-AnswerBench</h2>
+        <div class="my-8 flex justify-center">
+            <div class="bg-white p-4 rounded-xl shadow-lg">
+                <img src="imgs/model_accuracy_proofbench.png" 
+                     alt="Expert evaluation on IMO-ProofBench"
+                     class="max-w-full h-auto rounded-lg">
+            </div>
+        </div>
 
-<p>The first benchmark, IMO-AnswerBench, consists of 400 problems with verifiable answers carefully chosen from past Olympiad competitions. The problems span across four IMO categories (Algebra, Combinatorics, Geometry, and Number Theory) and are altered by experts to avoid memorization. For each category, the benchmark contains 100 problems across four levels of difficulty: pre-IMO (middle school or pre-Math Olympiad problems), IMO-Easy (equivalent to Problem 1 or Problem 4 at the IMO), IMO-Medium (equivalent to Problem 2 or Problem 5 at the IMO) and IMO-Hard (equivalent to Problem 3 or Problem 6 at the IMO or post-Math Olympiad problems). Problems were chosen from a variety of topics whose solutions require different problem solving techniques to ensure a diverse representation of topics, ideas, and domain knowledge as illustrated below.</p>
+        <blockquote class="my-6 text-gray-700 italic">
+            <p class="mb-0">Expert evaluation results on the Basic and Advanced subsets of IMO-ProofBench. Scores are presented as a percentage of the total possible points, with each problem graded from 0-7.</p>
+        </blockquote>
 
-<div style="text-align: center;">
-  <img src="imgs/imo_answer_bench.png" alt="IMO-AnswerBench Topic Distribution" height="500">
-</div>
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 mt-8">
+            Proof Autograder
+        </h3>
 
-<blockquote>
-<p>Topic distribution by category in IMO-AnswerBench. Number Theory and Combinatorics have the most topics which reflect the broad knowledge required to solve these problems while Geometry is mostly skewed towards angle and sidelength computation problems due to the nature of the short answer benchmark.</p>
-</blockquote>
+        <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed space-y-4">
+            <p>While human expert evaluation remains the gold standard for mathematical proofs, its cost and time intensity limit scalable research. To address this, we built <em>ProofAutoGrader</em>, an automatic grader for IMO-ProofBench. The autograder leverages Gemini 2.5 Pro, providing it with a prompt containing the problem statement, the candidate solution, a reference solution, and specific grading guidelines.</p>
 
-<p>Our Gemini Deep Think (IMO Gold) model achieved an overall accuracy of 80.0%, surpassing the best non-Gemini model (Grok 4) by 6.9% and the best open-weight model (DeepSeek R1) by 19.2%. Latest models such as GPT-5 are still struggling with overall accuracy of only 65.6% respectively. We show breakdowns of performances across the four categories (Algebra, Combinatorics, Geometry, Number Theory) in the figure below. Generally, models perform the worst in Combinatorics, potentially highlighting difficulties with advanced abstract reasoning.</p>
+            <p>When applying ProofAutoGrader to the 14 public models on IMO-ProofBench, the average grades from our automatic grader strongly correlate with human grades, yielding high Pearson correlation coefficients of <strong class="text-blue-600">0.96</strong> and <strong class="text-blue-600">0.93</strong> on both basic and advanced problems respectively. In addition, we also tested ProofAutoGrader on 170 internal systems, developed as part of our IMO <a href="https://deepmind.google/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/" class="text-blue-600 hover:text-blue-800 hover:underline font-medium">effort</a>. On this larger pool, the automatic grader achieved a lower, but still reasonable Pearson correlation coefficient of <strong class="text-blue-600">0.87</strong>.</p>
+        </div>
 
-<div style="text-align: center;">
-  <img src="imgs/model_accuracy_answerbench.png" alt="Model Accuracy on IMO-AnswerBench">
-</div>
+        <div class="my-8 flex justify-center">
+            <div class="bg-white p-4 rounded-xl shadow-lg">
+                <img src="imgs/proofgrader_scatterplot.png" 
+                     alt="Correlation between human expert grades and ProofAutoGrader scores"
+                     class="max-w-full h-auto rounded-lg">
+            </div>
+        </div>
+    </section>
 
-<blockquote>
-<p>Model accuracy on IMO-AnswerBench. Results are averaged over 8 runs, except for Gemini 2.5 Deep Think and Gemini Deep Think (IMO Gold) (single run).</p>
-</blockquote>
+    <!-- IMO-GradingBench Section -->
+    <section class="mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
+            IMO-GradingBench
+        </h2>
+        <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed space-y-4">
+            <p><em>IMO-GradingBench</em>, with 1000 human gradings on proofs, is designed to enable further progress in automatic evaluation of long-form answers.</p>
+        </div>
 
-<h2>IMO-ProofBench</h2>
+        <div class="my-8 flex justify-center">
+            <div class="bg-white p-4 rounded-xl shadow-lg">
+                <img src="imgs/imo_grading_bench.png" 
+                     alt="Distribution of human grades in IMO-GradingBench" 
+                     class="max-w-full h-auto rounded-lg">
+            </div>
+        </div>
+    </section>
 
-<p>While the final answer accuracy provided by IMO-AnswerBench offers a valuable metric for measuring mathematical abilities, it is insufficient for a comprehensive assessment of mathematical reasoning. We, hence, introduce IMO-ProofBench as the next-level evaluation designed to evaluate the ability of AI models in constructing rigorous and valid mathematical arguments. With 60 proof-based problems, the benchmark is divided into two subsets: a basic set covering pre-IMO to IMO-Medium difficulty levels, and an advanced set featuring novel, highly challenging problems simulating complete IMO examinations, up to IMO-Hard level. Our goal for the basic set is to assess models in their early stages of development. Sufficiently strong performance on the basic set would justify progression to the advanced set.</p>
-
-<p>Performances on the basic IMO-ProofBench varies significantly: while Gemini Deep Think (IMO Gold) achieves a high score of 89.0%, most models score below 60%, indicating that there is still considerable room for improvements. The advanced IMO-ProofBench proves to be a more significant challenge that all non-Gemini models score below 25%. Our Gemini Deep Think (IMO Gold) model achieved a state-of-the art score of 65.7% according to human evaluations. This represents a substantial leap in capability, but its distance from a perfect score indicates that even the strongest models have room for growth in sophisticated mathematical reasoning.</p>
-
-<div style="text-align: center;">
-  <img src="imgs/model_accuracy_proofbench.png" alt="Expert evaluation on IMO-ProofBench">
-</div>
-
-<blockquote>
-<p>Expert evaluation results on the Basic and Advanced subsets of IMO-ProofBench. Scores are presented as a percentage of the total possible points, with each problem graded from 0-7.</p>
-</blockquote>
-
-<h3>Proof Autograder</h3>
-
-<p>While human expert evaluation remains the gold standard for mathematical proofs, its cost and time intensity limit scalable research. To address this, we built ProofAutoGrader, an automatic grader for IMO-ProofBench. The autograder leverages Gemini 2.5 Pro, providing it with a prompt containing the problem statement, the candidate solution, a reference solution, and specific grading guidelines.</p>
-
-<p>When applying ProofAutoGrader to the 14 public models on IMO-ProofBench, the average grades from our automatic grader strongly correlate with human grades, yielding high Pearson correlation coefficients of 0.96 and 0.93 on both basic and advanced problems respectively. In addition, we also tested ProofAutoGrader on 170 internal systems, developed as part of our IMO <a href="https://deepmind.google/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/">effort</a>. On this larger pool, the automatic grader achieved a lower, but still reasonable Pearson correlation coefficient of 0.87.</p>
-
-<div style="text-align: center;">
-  <img src="imgs/proofgrader_scatterplot.png" alt="Correlation between human expert grades and ProofAutoGrader scores">
-</div>
-
-<h2>IMO-GradingBench</h2>
-
-<p>IMO-GradingBench, with 1000 human gradings on proofs, is designed to enable further progress in automatic evaluation of long-form answers.</p>
-
-<div style="text-align: center;">
-  <img src="imgs/imo_grading_bench.png" alt="Distribution of human grades in IMO-GradingBench" height="500">
-</div>
-
-<h2>Citing this work</h2>
-
-<pre><code>@inproceedings{luong-etal-2025-towards,
+    <!-- Citing Section -->
+    <section>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
+            Citing this work
+        </h2>
+        <div class="bg-gray-900 rounded-xl p-6 overflow-x-auto">
+            <pre class="text-gray-100 font-mono text-sm md:text-base leading-relaxed whitespace-pre-wrap"><code>@inproceedings{luong-etal-2025-towards,
     title = "Towards Robust Mathematical Reasoning",
     author  = {Thang Luong and Dawsen Hwang and Hoang H. Nguyen and Golnaz Ghiasi and Yuri Chervonyi and Insuk Seo and Junsu Kim and Garrett Bingham and Jonathan Lee and Swaroop Mishra and Alex Zhai and Clara Huiyi Hu and Henryk Michalewski and Jimin Kim and Jeonghyun Ahn and Junhwi Bae and Xingyou Song and Trieu H. Trinh and Quoc V. Le and Junehyuk Jung},
     booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
@@ -251,5 +275,8 @@
     url = "https://aclanthology.org/2025.emnlp-main.1794/",
 }
 </code></pre>
+        </div>
+    </section>
 
+</div>
 </body>
