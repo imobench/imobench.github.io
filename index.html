@@ -67,7 +67,39 @@
         margin-right: auto;
         margin-left: 0;
     }
+
+    /* --- New Button Styling --- */
+    .action-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px; /* Space between icon and text */
+        padding: 10px 18px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1;
+        text-decoration: none; /* Important to remove default link underline */
+        color: #fff;
+        background-color: #2c3e50; /* Dark Blue/Gray */
+        border: none;
+        border-radius: 10px; /* Nicely rounded corners */
+        transition: background-color 0.15s ease, box-shadow 0.15s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+    }
+
+    .action-button:hover {
+        background-color: #34495e; /* Slightly darker on hover */
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        text-decoration: none; /* Ensure no underline on hover either */
+    }
+
+    .action-button i {
+        font-size: 1.1em; /* Adjust icon size */
+    }
+
 </style>
+<!-- Load Phosphor Icons for the buttons -->
+<script src="https://unpkg.com/@phosphor-icons/web@2.0.3/dist/assets/index.js"></script>
 </head>
 <body>
 
@@ -120,20 +152,20 @@
 </div>
 
 <!-- NAVIGATION BUTTONS (Footer Area) -->
-    <div class="flex flex-wrap justify-center gap-4">
-        
-        <!-- Button 1: Paper -->
-        <button class="scroll-button bg-gray-700 hover:bg-gray-800 text-white font-semibold py-2 px-6 rounded-xl transition duration-150 flex items-center shadow-lg">
-            <i class="ph ph-file-text mr-2"></i>
-            <a href=https://aclanthology.org/2025.emnlp-main.1794/>📄 Paper</a>
-        </button>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-bottom: 24px;">
     
-        <!-- Button 2: Dataset -->
-        <button class="scroll-button bg-gray-700 hover:bg-gray-800 text-white font-semibold py-2 px-6 rounded-xl transition duration-150 flex items-center shadow-lg">
-            <i class="ph ph-code mr-2"></i>
-            <a href=https://github.com/google-deepmind/superhuman/tree/main/imobench>🥇 Dataset</a>
-        </button>
-    </div>
+    <!-- Button 1: Paper -->
+    <a href="https://aclanthology.org/2025.emnlp-main.1794/" class="action-button">
+        <i class="ph ph-file-text"></i>
+        Paper
+    </a>
+
+    <!-- Button 2: Dataset -->
+    <a href="https://github.com/google-deepmind/superhuman/tree/main/imobench" class="action-button">
+        <i class="ph ph-git-branch"></i>
+        Dataset
+    </a>
+</div>
 
 <h2>Introduction</h2>
 <p>In July 2025, we celebrated a historic <a href="https://deepmind.google/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/">achievement</a>: our advanced Gemini model with Deep Think technology reached a gold-medal standard at the International Mathematical Olympiad (IMO). This was a landmark moment for AI. But the win wasn't just about getting strong performances at IMO problems - it was about building a system capable of deep, robust mathematical reasoning.</p>
