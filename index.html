@@ -241,74 +241,15 @@
   <img src="imgs/imo_grading_bench.png" alt="Distribution of human grades in IMO-GradingBench" height="500">
 </div>
 
-<div id="citation-container">
-	<pre id="citation-code-block">
-		<button class="copy-citation-button" onclick="copyCitation()">
-			<i class="ph ph-copy"></i>
-			<span id="copy-text">Copy BibTeX</span>
-		</button>
-		<code>
-@inproceedings{luong-etal-2025-towards,
-title = "Towards Robust Mathematical Reasoning",
-author  = {Thang Luong and Dawsen Hwang and Hoang H. Nguyen and Golnaz Ghiasi and Yuri Chervonyi and Insuk Seo and Junsu Kim and Garrett Bingham and Jonathan Lee and Swaroop Mishra and Alex Zhai and Clara Huiyi Hu and Henryk Michalewski and Jimin Kim and Jeonghyun Ahn and Junhwi Bae and Xingyou Song and Trieu H. Trinh and Quoc V. Le and Junehyuk Jung},
-booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
-year = "2025",
-url = "https://aclanthology.org/2025.emnlp-main.1794/",
+<h2>Citing this work</h2>
+
+<pre><code>@inproceedings{luong-etal-2025-towards,
+    title = "Towards Robust Mathematical Reasoning",
+    author  = {Thang Luong and Dawsen Hwang and Hoang H. Nguyen and Golnaz Ghiasi and Yuri Chervonyi and Insuk Seo and Junsu Kim and Garrett Bingham and Jonathan Lee and Swaroop Mishra and Alex Zhai and Clara Huiyi Hu and Henryk Michalewski and Jimin Kim and Jeonghyun Ahn and Junhwi Bae and Xingyou Song and Trieu H. Trinh and Quoc V. Le and Junehyuk Jung},
+    booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+    year = "2025",
+    url = "https://aclanthology.org/2025.emnlp-main.1794/",
 }
-		</code>
-	</pre>
-</div>
-
-<script>
-    /**
-     * Copies the text content of the code block to the clipboard.
-     * Uses execCommand('copy') as a robust fallback for iframe environments.
-     */
-    function copyCitation() {
-        const citationBlock = document.getElementById('citation-code-block').querySelector('code');
-        const button = document.querySelector('.copy-citation-button');
-        const copyTextSpan = document.getElementById('copy-text');
-        
-        // 1. Get the raw text content
-        const textToCopy = citationBlock.innerText.trim();
-
-        // 2. Use document.execCommand('copy') as it works reliably in sandboxed environments (like iframes)
-        const textarea = document.createElement('textarea');
-        textarea.value = textToCopy;
-        textarea.style.position = 'fixed'; // Prevents scrolling to the bottom
-        document.body.appendChild(textarea);
-        
-        textarea.select();
-        
-        let success = false;
-        try {
-            success = document.execCommand('copy');
-        } catch (err) {
-            console.error('Failed to copy text using execCommand', err);
-        }
-
-        document.body.removeChild(textarea);
-
-        // 3. Provide user feedback
-        if (success) {
-            button.classList.add('copied');
-            copyTextSpan.textContent = 'Copied!';
-            button.querySelector('i').className = 'ph ph-check-circle';
-
-            setTimeout(() => {
-                button.classList.remove('copied');
-                copyTextSpan.textContent = 'Copy BibTeX';
-                button.querySelector('i').className = 'ph ph-copy';
-            }, 2000);
-        } else {
-            // Optional: Fallback notification if copy fails
-            copyTextSpan.textContent = 'Copy Failed!';
-            setTimeout(() => {
-                copyTextSpan.textContent = 'Copy BibTeX';
-            }, 2000);
-        }
-    }
-</script>
+</code></pre>
 
 </body>
-
