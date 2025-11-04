@@ -238,13 +238,71 @@
         </blockquote>
     </section>
 
-    <!-- IMO-AnswerBench Section -->
+    <!-- Other Benchmarks Section -->
     <section class="mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
-            IMO-AnswerBench
+            Other Benchmarks in IMO-Bench
         </h2>
+
+    	<!-- IMO-AnswerBench Subsection -->
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 mt-8">
+            IMO-AnswerBench
+        </h3>
+
+
         <div class="prose prose-lg max-w-none text-gray-900 leading-relaxed space-y-4">
-            <p>The first benchmark, <em>IMO-AnswerBench</em>, consists of 400 problems with verifiable answers carefully chosen from past Olympiad competitions. The problems span across four IMO categories (Algebra, Combinatorics, Geometry, and Number Theory) and are altered by experts to avoid memorization. For each category, the benchmark contains 100 problems across four levels of difficulty: pre-IMO (middle school or pre-Math Olympiad problems), IMO-Easy (equivalent to Problem 1 or Problem 4 at the IMO), IMO-Medium (equivalent to Problem 2 or Problem 5 at the IMO) and IMO-Hard (equivalent to Problem 3 or Problem 6 at the IMO or post-Math Olympiad problems). Problems were chosen from a variety of topics whose solutions require different problem solving techniques to ensure a diverse representation of topics, ideas, and domain knowledge as illustrated below.</p>
+            <p><em>IMO-AnswerBench</em> is a standard benchmark, consisting of 400 problems with verifiable answers carefully chosen from past Olympiad competitions. The problems span across four IMO categories (Algebra, Combinatorics, Geometry, and Number Theory) and are altered by experts to avoid memorization. For each category, the benchmark contains 100 problems across four levels of difficulty: pre-IMO (middle school or pre-Math Olympiad problems), IMO-Easy (equivalent to Problem 1 or Problem 4 at the IMO), IMO-Medium (equivalent to Problem 2 or Problem 5 at the IMO) and IMO-Hard (equivalent to Problem 3 or Problem 6 at the IMO or post-Math Olympiad problems).</p>
+
+        <div class="my-8 flex justify-center">
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Pre-IMO</th>
+      <th>IMO-Easy</th>
+      <th>IMO-Medium</th>
+      <th>IMO-Hard</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Algebra</td>
+      <td>11</td>
+      <td>46</td>
+      <td>32</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>Combinatorics</td>
+      <td>4</td>
+      <td>19</td>
+      <td>31</td>
+      <td>46</td>
+    </tr>
+    <tr>
+      <td>Geometry</td>
+      <td>13</td>
+      <td>44</td>
+      <td>32</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>Number Theory</td>
+      <td>2</td>
+      <td>20</td>
+      <td>31</td>
+      <td>47</td>
+    </tr>
+  </tbody>
+</table>
+	</div>
+
+        <blockquote class="my-6 italic">
+            <p class="mb-0 text-gray-600">Difficulty statistics for IMO-AnsBench.</p>
+        </blockquote>
+
+
+	    <p>Problems were chosen from a variety of topics whose solutions require different problem solving techniques to ensure a diverse representation of topics, ideas, and domain knowledge as illustrated below.</p>
         </div>
 
         <div class="my-8 flex justify-center">
@@ -259,6 +317,73 @@
             <p class="mb-0 text-gray-600">Topic distribution by category in IMO-AnswerBench. Number Theory and Combinatorics have the most topics which reflect the broad knowledge required to solve these problems while Geometry is mostly skewed towards angle and sidelength computation problems due to the nature of the short answer benchmark.</p>
         </blockquote>
 
+
+    	<!-- IMO-GradingBench Subsection -->
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 mt-8">
+            IMO-GradingBench
+        </h3>
+        <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed space-y-4">
+	    <p>While IMO-ProofBench evaluates proof-writing abilities, it is equally important to assess models in terms of their ability to evaluate the correctness of given solutions. This capability is crucial for developing reliable automated grading systems and improving general mathematical reasoning. As part of our IMO effort, we have benchmarked extensively many internal models on the advanced set of IMO-Proof Bench using human evaluations. These human gradings led to the creation of <em>IMO-GradingBench</em> with 1000 examples, each containing a problem statement, a proposed solution, and its human-assigned grade (on a 0–7 scale). To reduce noise from fine-grained scoring, we frame the evaluation as a four-way classification by mapping the given IMO points to the labels (Correct, Almost, Partial, Incorrect) as detailed below.</p>
+        </div>
+
+<div class="my-8 flex justify-center">
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>IMO Points</th>
+      <th>Solution quality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Correct</td>
+      <td>7</td>
+      <td>Fully correct, rigorous, and complete</td>
+    </tr>
+    <tr>
+      <td>Almost</td>
+      <td>6</td>
+      <td>Almost correct, minor errors</td>
+    </tr>
+    <tr>
+      <td>Partial</td>
+      <td>1</td>
+      <td>Mostly incorrect, some relevant results</td>
+    </tr>
+    <tr>
+      <td>Incorrect</td>
+      <td>0</td>
+      <td>Completely incorrect or irrelevant.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+        <blockquote class="my-6 italic">
+            <p class="mb-0 text-gray-600">Our simplified IMO ratings.</p>
+        </blockquote>
+
+	<p>To ensure a robust evaluation, the dataset has been balanced with a roughly equal number of examples per category.When problems are grouped by their IMO difficulties, a clear trend emerges. The proportion of correct and almost solutions decreases as the intended difficulty moves from IMO-easy to IMO-hard, while the proportion of incorrect and partial solutions increases. This confirms that the grading distribution of IMO-GradingBench aligns with its assigned difficulty levels.</p>
+        <div class="my-8 flex justify-center">
+            <div class="bg-white p-4 rounded-xl shadow-lg">
+                <img src="imgs/imo_grading_bench.png" 
+                     alt="Distribution of human grades in IMO-GradingBench" 
+                     class="max-w-full h-auto rounded-lg">
+            </div>
+        </div>
+        <blockquote class="my-6 italic">
+            <p class="mb-0 text-gray-600">Grade distribution for solutions in IMO-GradingBench by difficulty levels (IMO-Hard, IMO-Medium, IMO-Easy).</p>
+        </blockquote>
+
+
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section class="mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
+            Leaderboards
+        </h2>
         <div class="prose prose-lg max-w-none text-gray-900 leading-relaxed space-y-4">
             <p>Our Gemini Deep Think (IMO Gold) model achieved an overall accuracy of <strong class="text-blue-600">80.0%</strong>, surpassing the best non-Gemini model (Grok 4) by 6.9% and the best open-weight model (DeepSeek R1) by 19.2%. Latest models such as GPT-5 are still struggling with overall accuracy of only 65.6% respectively. We show breakdowns of performances across the four categories (Algebra, Combinatorics, Geometry, Number Theory) in the figure below. Generally, models perform the worst in Combinatorics, potentially highlighting difficulties with advanced abstract reasoning.</p>
         </div>
@@ -274,24 +399,8 @@
         <blockquote class="border-blue-500 my-6 rounded-r-lg  italic">
             <p class="mb-0 text-gray-600">Model accuracy on IMO-AnswerBench. Results are averaged over 8 runs, except for Gemini 2.5 Deep Think and Gemini Deep Think (IMO Gold) (single run).</p>
         </blockquote>
-    </section>
 
-    <!-- IMO-GradingBench Section -->
-    <section class="mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
-            IMO-GradingBench
-        </h2>
-        <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed space-y-4">
-            <p><em>IMO-GradingBench</em>, with 1000 human gradings on proofs, is designed to enable further progress in automatic evaluation of long-form answers.</p>
-        </div>
 
-        <div class="my-8 flex justify-center">
-            <div class="bg-white p-4 rounded-xl shadow-lg">
-                <img src="imgs/imo_grading_bench.png" 
-                     alt="Distribution of human grades in IMO-GradingBench" 
-                     class="max-w-full h-auto rounded-lg">
-            </div>
-        </div>
     </section>
 
     <!-- Citing Section -->
