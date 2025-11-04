@@ -91,9 +91,8 @@
     <!-- CORRESPONDENCE AND AFFILIATIONS -->
     <div class="text-sm md:text-base text-gray-600 space-y-2 mb-8 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
         <div>
-            <sup class="text-blue-600 font-semibold">◊</sup>Corresponding authors: <a href="mailto:thangluong@google.com" class="text-blue-600 hover:text-blue-800 hover:underline">thangluong@google.com</a>, <a href="mailto:junehuyk@google.com" class="text-blue-600 hover:text-blue-800 hover:underline">junehuyk@google.com</a>.
-        </div>
-        <div>
+            <sup class="text-blue-600 font-semibold">◊</sup>Corresponding authors: <a href="mailto:thangluong@google.com" class="text-blue-600 hover:text-blue-800 hover:underline">thangluong@google.com</a>, <a href="mailto:junehyuk@google.com" class="text-blue-600 hover:text-blue-800 hover:underline">junehyuk@google.com</a>.
+	    <br>
             <sup class="text-blue-600 font-semibold">*</sup>Core and equal contributors
             <sup class="text-blue-600 font-semibold">†</sup> Work previously conducted under Google DeepMind.
         </div>
@@ -102,7 +101,7 @@
     <!-- NAVIGATION BUTTONS -->
     <div class="grid grid-cols-2 sm:flex sm:flex-wrap gap-4 mb-10">
         <!-- Button 1: Paper -->
-        <a href="https://aclanthology.org/2025.emnlp-main.1794/" 
+        <a href="https://arxiv.org/abs/2511.01846"
            class="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 text-sm sm:text-base font-medium text-blue-600 bg-white border border-blue-600 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.7997 2.21048C15.3897 1.80048 14.6797 2.08048 14.6797 2.65048V6.14048C14.6797 7.60048 15.9197 8.81048 17.4297 8.81048C18.3797 8.82048 19.6997 8.82048 20.8297 8.82048C21.3997 8.82048 21.6997 8.15048 21.2997 7.75048C19.8597 6.30048 17.2797 3.69048 15.7997 2.21048Z" fill="#292D32"/>
@@ -129,12 +128,53 @@
         </h2>
         <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed space-y-4">
             <p>In July 2025, we celebrated a historic <a href="https://deepmind.google/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/" class="text-blue-600 hover:text-blue-800 hover:underline font-medium">achievement</a>: our advanced Gemini model with Deep Think technology reached a gold-medal standard at the International Mathematical Olympiad (IMO). This was a landmark moment for AI. But the win wasn't just about getting strong performances at IMO problems - it was about building a system capable of deep, robust mathematical reasoning.</p>
-            <p>At <a href="https://2025.emnlp.org/" class="text-blue-600 hover:text-blue-800 hover:underline font-medium">EMNLP 2025</a>, we are excited to introduce IMO-Bench, a suite of advanced reasoning benchmarks that played a crucial role in our IMO-gold journey and were designed to push the frontiers of mathematical reasoning in AI. Vetted by a panel of IMO medalists and mathematicians, IMO-Bench specifically targets the level of IMO due to its notoriously difficult problems, which require both rigorous multi-step reasoning and creativity beyond simple application of known formulas. IMO-Bench consists of three benchmarks that judge models on diverse capabilities: <em >IMO-AnswerBench</em> - a large-scale test on getting the right answer, <em>IMO-ProofBench</em> - a next-level evaluation for proof writing, and <em>IMO-GradingBench</em> to enable further progress in automatic evaluation of long-form answers. We <a href="https://github.com/google-deepmind/superhuman/tree/main/imobench/" class="text-blue-600 hover:text-blue-800 hover:underline font-medium">release</a> IMO-Bench together with rich grading data to the community to help enable further advancements towards robust mathematical reasoning.</p>
+            <p>At <a href="https://2025.emnlp.org/" class="text-blue-600 hover:text-blue-800 hover:underline font-medium">EMNLP 2025</a>, we are excited to introduce <a href="https://aclanthology.org/2025.emnlp-main.1794/" class="text-blue-600 hover:text-blue-800 hover:underline font-medium">IMO-Bench</a>, a suite of advanced reasoning benchmarks that played a crucial role in our IMO-gold journey and were designed to push the frontiers of mathematical reasoning in AI. Vetted by a panel of IMO medalists and mathematicians, IMO-Bench specifically targets the level of IMO due to its notoriously difficult problems, which require both rigorous multi-step reasoning and creativity beyond simple application of known formulas. We <a href="https://github.com/google-deepmind/superhuman/tree/main/imobench/" class="text-blue-600 hover:text-blue-800 hover:underline font-medium">release</a> IMO-Bench together with rich grading data to the community to help enable further advancements towards robust mathematical reasoning.</p>
 
         <blockquote class="border-l-4 border-blue-500 pl-6 py-4 my-6 bg-blue-50 rounded-r-lg text-gray-700">
             <p class="mb-0   text-blue-800 italic text-xl mb-6">&ldquo;IMO-Bench is an impressive collection of high quality data for AI evaluation covering a diverse and representative set of topics and difficulties in high school level math competitions. I am very pleased to see this benchmark being used in developing an AI that achieved gold medal standard this year.&rdquo;</p>
             <p class="mb-0  text-blue-800 text-xl">Yufei Zhao (<em>IMO Gold Medalist, 3-time Putnam Fellow, and Professor of Mathematics, MIT</em>).</p>
         </blockquote>
+       </div>
+      
+    </section>
+
+    <!-- IMO-Bench at a glance Section -->
+    <section class="mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
+            IMO-Bench at a glance
+        </h2>
+        <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed space-y-4">
+            <p>IMO-Bench consists of three benchmarks that judge models on diverse capabilities: <em >IMO-AnswerBench</em> - a large-scale test on getting the right answer, <em>IMO-ProofBench</em> - a next-level evaluation for proof writing, and <em>IMO-GradingBench</em> to enable further progress in automatic evaluation of long-form answers.</p>
+        </div>
+
+        <div class="my-8 flex justify-center">
+<table>
+  <thead>
+    <tr>
+      <th>Benchmark</th>
+      <th>Size</th>
+      <th>Task</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IMO-AnsBench</td>
+      <td>400</td>
+      <td>Get the right answer</td>
+    </tr>
+    <tr>
+      <td>IMO-ProofBench</td>
+      <td>60</td>
+      <td>Write a rigorous proof</td>
+    </tr>
+    <tr>
+      <td>IMO-GradeBench</td>
+      <td>1,000</td>
+      <td>Grade a proof</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
 
             <p>A key highlight of our work is to show that autograders built with Gemini reasoning correlate well with human evaluations on IMO-ProofBench, as illustrated below, for a wide range of foundation models. This was achieved thanks to the accompanying grading schemes in IMO-Bench, which are suitable for both human experts and automated systems. We ultimately hope to steer the community's focus from final answers to the proofs themselves, enabling a more rigorous assessment of AI reasoning processes.</p>
 
@@ -150,8 +190,7 @@
             <p class="mb-0 text-base">IMO-ProofBench, a key benchmark in IMO-Bench, for measuring proof-writing capabilities. We demonstrated high correlations between human and automatic evaluations on a variety of public models, including our IMO-gold model <a href="https://deepmind.google/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/" class="text-blue-600 hover:text-blue-800 hover:underline font-medium">(Luong and Lockhart, 2025)</a>.</p>
         </blockquote>
 
-        </div>
-      
+ 
     </section>
 
     <!-- IMO-ProofBench Section -->
