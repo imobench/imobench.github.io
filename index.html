@@ -50,16 +50,22 @@
 <body class="bg-gray-900/5 text-gray-900 antialiased py-4" >
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 bg-white/95 rounded-2xl shadow-2xl ring-1 ring-black/5">
     <!-- Header Logo -->
-    <div class="mb-6">
+    <div class="mb-6 flex items-start justify-between border-b border-gray-200">
+         <!-- Main Title -->
+    <div class="mb-4 pb-4 ">
         <img src="imgs/Google_DeepMind_Logo_rgb_3320x512px.png" 
-             height="32" 
-             class="h-9 w-auto">
+        height="32" 
+        class="h-8 sm:h-10 w-auto object-contain mb-6" >
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900">Towards Robust Mathematical Reasoning</h1>
+        
+    </div>
+
+
+      
+        <img src="imgs/logo-imobench.png" class="h-24 sm:h-24 w-auto rounded object-contain">
     </div>
     
-    <!-- Main Title -->
-     <h1 class="text-4xl md:text-4xl font-bold text-gray-900 mb-6 pb-4 border-b border-gray-200 flex items-center gap-4">
-         <img src="imgs/logo-imobench.png" class="h-16 w-auto rounded"> Towards Robust Mathematical Reasoning
-    </h1>
+   
 
     <!-- AUTHORS -->
     <div class="text-base md:text-lg text-gray-800 mb-6 leading-relaxed">
@@ -99,27 +105,27 @@
     </div>
 
     <!-- NAVIGATION BUTTONS -->
-    <div class="grid grid-cols-2 sm:flex sm:flex-wrap gap-4 mb-10">
-        <!-- Button 1: Paper -->
-        <a href="https://arxiv.org/abs/2511.01846"
-           class="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 text-sm sm:text-base font-medium text-blue-600 bg-white border border-blue-600 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15.7997 2.21048C15.3897 1.80048 14.6797 2.08048 14.6797 2.65048V6.14048C14.6797 7.60048 15.9197 8.81048 17.4297 8.81048C18.3797 8.82048 19.6997 8.82048 20.8297 8.82048C21.3997 8.82048 21.6997 8.15048 21.2997 7.75048C19.8597 6.30048 17.2797 3.69048 15.7997 2.21048Z" fill="#292D32"/>
-            <path d="M20.5 10.19H17.61C15.24 10.19 13.31 8.26 13.31 5.89V3C13.31 2.45 12.86 2 12.31 2H8.07C4.99 2 2.5 4 2.5 7.57V16.43C2.5 20 4.99 22 8.07 22H15.93C19.01 22 21.5 20 21.5 16.43V11.19C21.5 10.64 21.05 10.19 20.5 10.19ZM11.5 17.75H7.5C7.09 17.75 6.75 17.41 6.75 17C6.75 16.59 7.09 16.25 7.5 16.25H11.5C11.91 16.25 12.25 16.59 12.25 17C12.25 17.41 11.91 17.75 11.5 17.75ZM13.5 13.75H7.5C7.09 13.75 6.75 13.41 6.75 13C6.75 12.59 7.09 12.25 7.5 12.25H13.5C13.91 12.25 14.25 12.59 14.25 13C14.25 13.41 13.91 13.75 13.5 13.75Z" fill="#292D32"/>
-            </svg>
-            
-            <span>Paper</span>
-        </a>
-
-        <!-- Button 2: Dataset -->
-        <a href="https://github.com/google-deepmind/superhuman/tree/main/imobench" 
-           class="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 text-sm sm:text-base font-medium text-blue-600 bg-white border border-blue-600 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-           <svg height="24" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" class="octicon octicon-mark-github v-align-middle">
-            <path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"></path>
+ <div class="grid grid-cols-2 sm:flex sm:flex-wrap gap-4 mb-0">
+    <!-- Button 1: Paper -->
+    <a href="https://arxiv.org/abs/2511.01846"
+       class="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 text-sm sm:text-base font-medium text-blue-600 bg-white border border-blue-600 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15.7997 2.21048C15.3897 1.80048 14.6797 2.08048 14.6797 2.65048V6.14048C14.6797 7.60048 15.9197 8.81048 17.4297 8.81048C18.3797 8.82048 19.6997 8.82048 20.8297 8.82048C21.3997 8.82048 21.6997 8.15048 21.2997 7.75048C19.8597 6.30048 17.2797 3.69048 15.7997 2.21048Z" fill="#292D32"/>
+        <path d="M20.5 10.19H17.61C15.24 10.19 13.31 8.26 13.31 5.89V3C13.31 2.45 12.86 2 12.31 2H8.07C4.99 2 2.5 4 2.5 7.57V16.43C2.5 20 4.99 22 8.07 22H15.93C19.01 22 21.5 20 21.5 16.43V11.19C21.5 10.64 21.05 10.19 20.5 10.19ZM11.5 17.75H7.5C7.09 17.75 6.75 17.41 6.75 17C6.75 16.59 7.09 16.25 7.5 16.25H11.5C11.91 16.25 12.25 16.59 12.25 17C12.25 17.41 11.91 17.75 11.5 17.75ZM13.5 13.75H7.5C7.09 13.75 6.75 13.41 6.75 13C6.75 12.59 7.09 12.25 7.5 12.25H13.5C13.91 12.25 14.25 12.59 14.25 13C14.25 13.41 13.91 13.75 13.5 13.75Z" fill="#292D32"/>
         </svg>
-            <span> Dataset</span>
-        </a>
-    </div>
+        
+        <span>Paper</span>
+    </a>
+
+    <!-- Button 2: Dataset -->
+    <a href="https://github.com/google-deepmind/superhuman/tree/main/imobench" 
+       class="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 text-sm sm:text-base font-medium text-blue-600 bg-white border border-blue-600 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+       <svg height="24" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" class="octicon octicon-mark-github v-align-middle">
+        <path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"></path>
+    </svg>
+        <span> Dataset</span>
+    </a>
+</div>
  
     <!-- Introduction Section -->
     <section class="mb-12">
@@ -132,7 +138,7 @@
 
         <blockquote class="border-l-4 border-blue-500 pl-6 py-4 my-6 bg-blue-50 rounded-r-lg text-gray-700">
             <p class="mb-0   text-blue-800 italic text-xl mb-6">&ldquo;IMO-Bench is an impressive collection of high quality data for AI evaluation covering a diverse and representative set of topics and difficulties in high school level math competitions. I am very pleased to see this benchmark being used in developing an AI that achieved gold medal standard this year.&rdquo;</p>
-            <p class="mb-0  text-blue-800 text-xl">Yufei Zhao (<em>IMO Gold Medalist, 3-time Putnam Fellow, and Professor of Mathematics, MIT</em>).</p>
+            <p class="mb-0  text-blue-800 text-base">Yufei Zhao (<em>IMO Gold Medalist, 3-time Putnam Fellow, and Professor of Mathematics, MIT</em>).</p>
         </blockquote>
        </div>
       
@@ -148,47 +154,52 @@
         </div>
 
         <div class="my-8 flex justify-center">
-<table>
-  <thead>
-    <tr>
-      <th>Benchmark</th>
-      <th>Size</th>
-      <th>Task</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>IMO-AnswerBench</td>
-      <td>400</td>
-      <td>Get the right answer</td>
-    </tr>
-    <tr>
-      <td>IMO-ProofBench</td>
-      <td>60</td>
-      <td>Write a rigorous proof</td>
-    </tr>
-    <tr>
-      <td>IMO-GradingBench</td>
-      <td>1,000</td>
-      <td>Grade a proof</td>
-    </tr>
-  </tbody>
-</table>
+            <div class="w-full md:w-[100%] overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200 overflow-hidden rounded-xl border border-gray-200 shadow">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-base font-semibold text-gray-600 uppercase tracking-wider">Benchmark</th>
+                            <th scope="col" class="px-6 py-3 text-left text-base font-semibold text-gray-600 uppercase tracking-wider">Size</th>
+                            <th scope="col" class="px-6 py-3 text-left text-base font-semibold text-gray-600 uppercase tracking-wider">Task</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">IMO-AnswerBench</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">400</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">Get the right answer</td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">IMO-ProofBench</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">60</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">Write a rigorous proof</td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">IMO-GradingBench</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">1,000</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">Grade a proof</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>A key highlight of our work is to show that autograders built with Gemini reasoning correlate well with human evaluations on IMO-ProofBench, as illustrated below, for a wide range of foundation models. This was achieved thanks to the accompanying grading schemes in IMO-Bench, which are suitable for both human experts and automated systems. We ultimately hope to steer the community's focus from final answers to the proofs themselves, enabling a more rigorous assessment of AI reasoning processes.</p>
         </div>
 
-            <p>A key highlight of our work is to show that autograders built with Gemini reasoning correlate well with human evaluations on IMO-ProofBench, as illustrated below, for a wide range of foundation models. This was achieved thanks to the accompanying grading schemes in IMO-Bench, which are suitable for both human experts and automated systems. We ultimately hope to steer the community's focus from final answers to the proofs themselves, enabling a more rigorous assessment of AI reasoning processes.</p>
+         
 
  <!-- Main Plot Image -->
  <div class="my-8 flex justify-center">
-    <div class="bg-white p-4 rounded-xl shadow-lg">
+   
+    <div class="bg-white p-4 rounded-xl shadow-lg w-full md:w-[75%]">
         <img src="imgs/Main-Plot.png" 
              alt="Correlation between human and automatic evaluations on IMO-ProofBench" 
              class="max-w-full h-auto rounded-lg">
+             <blockquote class="mt-4 text-gray-700 italic">
+                <p class="mb-0 text-base">IMO-ProofBench, a key benchmark in IMO-Bench, for measuring proof-writing capabilities. We demonstrated high correlations between human and automatic evaluations on a variety of public models, including our IMO-gold model <a href="https://deepmind.google/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/" class="text-blue-600 hover:text-blue-800 hover:underline font-medium">(Luong and Lockhart, 2025)</a>.</p>
+            </blockquote>
     </div>
  </div>
-        <blockquote class="my-6 text-gray-700 italic">
-            <p class="mb-0 text-base">IMO-ProofBench, a key benchmark in IMO-Bench, for measuring proof-writing capabilities. We demonstrated high correlations between human and automatic evaluations on a variety of public models, including our IMO-gold model <a href="https://deepmind.google/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/" class="text-blue-600 hover:text-blue-800 hover:underline font-medium">(Luong and Lockhart, 2025)</a>.</p>
-        </blockquote>
+       
 
  
     </section>
@@ -209,12 +220,13 @@
                 <img src="imgs/model_accuracy_proofbench.png" 
                      alt="Expert evaluation on IMO-ProofBench"
                      class="max-w-full h-auto rounded-lg">
+                     <blockquote class="mt-4 text-gray-700 italic">
+                        <p class="mb-0">Expert evaluation results on the Basic and Advanced subsets of IMO-ProofBench. Scores are presented as a percentage of the total possible points, with each problem graded from 0-7.</p>
+                    </blockquote>
             </div>
         </div>
 
-        <blockquote class="my-6 text-gray-700 italic">
-            <p class="mb-0">Expert evaluation results on the Basic and Advanced subsets of IMO-ProofBench. Scores are presented as a percentage of the total possible points, with each problem graded from 0-7.</p>
-        </blockquote>
+        
 
         <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 mt-8">
             Proof Autograder
@@ -231,194 +243,198 @@
                 <img src="imgs/proofgrader_scatterplot.png" 
                      alt="Correlation between human expert grades and ProofAutoGrader scores"
                      class="max-w-full h-auto rounded-lg">
+                     <blockquote class="mt-4 text-gray-700 italic">
+                        <p class="mb-0 text-base">Correlation between ProofAutoGrader and human experts on IMO-Proof Bench, evaluated over 14 public models (<em>left</em>) and 170 internal models during our IMO-gold journey (<em>right</em>).</p>
+                    </blockquote>
             </div>
         </div>
-        <blockquote class="my-6 text-gray-700 italic">
-            <p class="mb-0 text-base">Correlation between ProofAutoGrader and human experts on IMO-Proof Bench, evaluated over 14 public models (<em>left</em>) and 170 internal models during our IMO-gold journey (<em>right</em>).</p>
-        </blockquote>
+       
     </section>
+<!-- Other Benchmarks Section -->
+<section class="mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
+        Other Benchmarks in IMO-Bench
+    </h2>
 
-    <!-- Other Benchmarks Section -->
-    <section class="mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
-            Other Benchmarks in IMO-Bench
-        </h2>
-
-    	<!-- IMO-AnswerBench Subsection -->
-        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 mt-8">
-            IMO-AnswerBench
-        </h3>
-
-
-        <div class="prose prose-lg max-w-none text-gray-900 leading-relaxed space-y-4">
-            <p><em>IMO-AnswerBench</em> is a standard benchmark, consisting of 400 problems with verifiable answers carefully chosen from past Olympiad competitions. The problems span across four IMO categories (Algebra, Combinatorics, Geometry, and Number Theory) and are altered by experts to avoid memorization. For each category, the benchmark contains 100 problems across four levels of difficulty: pre-IMO (middle school or pre-Math Olympiad problems), IMO-Easy (equivalent to Problem 1 or Problem 4 at the IMO), IMO-Medium (equivalent to Problem 2 or Problem 5 at the IMO) and IMO-Hard (equivalent to Problem 3 or Problem 6 at the IMO or post-Math Olympiad problems).</p>
-
-        <div class="my-8 flex justify-center">
-<table>
-  <thead>
-    <tr>
-      <th>Category</th>
-      <th>Pre-IMO</th>
-      <th>IMO-Easy</th>
-      <th>IMO-Medium</th>
-      <th>IMO-Hard</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Algebra</td>
-      <td>11</td>
-      <td>46</td>
-      <td>32</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <td>Combinatorics</td>
-      <td>4</td>
-      <td>19</td>
-      <td>31</td>
-      <td>46</td>
-    </tr>
-    <tr>
-      <td>Geometry</td>
-      <td>13</td>
-      <td>44</td>
-      <td>32</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <td>Number Theory</td>
-      <td>2</td>
-      <td>20</td>
-      <td>31</td>
-      <td>47</td>
-    </tr>
-  </tbody>
-</table>
-	</div>
-
-        <blockquote class="my-6 italic">
-            <p class="mb-0 text-gray-600">Difficulty statistics for IMO-AnsBench.</p>
-        </blockquote>
+    <!-- IMO-AnswerBench Subsection -->
+    <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 mt-8">
+        IMO-AnswerBench
+    </h3>
 
 
-	    <p>Problems were chosen from a variety of topics whose solutions require different problem solving techniques to ensure a diverse representation of topics, ideas, and domain knowledge as illustrated below.</p>
-        </div>
+    <div class="prose prose-lg max-w-none text-gray-900 leading-relaxed space-y-4">
+        <p><em>IMO-AnswerBench</em> is a standard benchmark, consisting of 400 problems with verifiable answers carefully chosen from past Olympiad competitions. The problems span across four IMO categories (Algebra, Combinatorics, Geometry, and Number Theory) and are altered by experts to avoid memorization. For each category, the benchmark contains 100 problems across four levels of difficulty: pre-IMO (middle school or pre-Math Olympiad problems), IMO-Easy (equivalent to Problem 1 or Problem 4 at the IMO), IMO-Medium (equivalent to Problem 2 or Problem 5 at the IMO) and IMO-Hard (equivalent to Problem 3 or Problem 6 at the IMO or post-Math Olympiad problems).</p>
 
-        <div class="my-8 flex justify-center">
-            <div class="bg-white p-4 rounded-xl shadow-lg">
-                <img src="imgs/imo_answer_bench.png" 
-                     alt="IMO-AnswerBench Topic Distribution" 
-                     class="max-w-full h-auto rounded-lg">
-            </div>
-        </div>
-
-        <blockquote class="my-6 italic">
-            <p class="mb-0 text-gray-600">Topic distribution by category in IMO-AnswerBench. Number Theory and Combinatorics have the most topics which reflect the broad knowledge required to solve these problems while Geometry is mostly skewed towards angle and sidelength computation problems due to the nature of the short answer benchmark.</p>
-        </blockquote>
-
-
-    	<!-- IMO-GradingBench Subsection -->
-        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 mt-8">
-            IMO-GradingBench
-        </h3>
-        <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed space-y-4">
-	    <p>While IMO-ProofBench evaluates proof-writing abilities, it is equally important to assess models in terms of their ability to evaluate the correctness of given solutions. This capability is crucial for developing reliable automated grading systems and improving general mathematical reasoning. As part of our IMO effort, we have benchmarked extensively many internal models on the advanced set of IMO-Proof Bench using human evaluations. These human gradings led to the creation of <em>IMO-GradingBench</em> with 1000 examples, each containing a problem statement, a proposed solution, and its human-assigned grade (on a 0–7 scale). To reduce noise from fine-grained scoring, we frame the evaluation as a four-way classification by mapping the given IMO points to the labels (Correct, Almost, Partial, Incorrect) as detailed below.</p>
-        </div>
-
-<div class="my-8 flex justify-center">
-<table>
-  <thead>
-    <tr>
-      <th>Category</th>
-      <th>IMO Points</th>
-      <th>Solution quality</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Correct</td>
-      <td>7</td>
-      <td>Fully correct, rigorous, and complete</td>
-    </tr>
-    <tr>
-      <td>Almost</td>
-      <td>6</td>
-      <td>Almost correct, minor errors</td>
-    </tr>
-    <tr>
-      <td>Partial</td>
-      <td>1</td>
-      <td>Mostly incorrect, some relevant results</td>
-    </tr>
-    <tr>
-      <td>Incorrect</td>
-      <td>0</td>
-      <td>Completely incorrect or irrelevant.</td>
-    </tr>
-  </tbody>
-</table>
+<div class="my-8 mb-4 flex justify-center">
+    <div class="w-full md:w-[100%] overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200 overflow-hidden rounded-xl border border-gray-200 shadow">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th scope="col" class="px-6 py-3 text-left text-base font-semibold text-gray-600 uppercase tracking-wider">Category</th>
+                    <th scope="col" class="px-6 py-3 text-left text-base font-semibold text-gray-600 uppercase tracking-wider">Pre-IMO</th>
+                    <th scope="col" class="px-6 py-3 text-left text-base font-semibold text-gray-600 uppercase tracking-wider">IMO-Easy</th>
+                    <th scope="col" class="px-6 py-3 text-left text-base font-semibold text-gray-600 uppercase tracking-wider">IMO-Medium</th>
+                    <th scope="col" class="px-6 py-3 text-left text-base font-semibold text-gray-600 uppercase tracking-wider">IMO-Hard</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+                <tr class="odd:bg-white even:bg-gray-50">
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">Algebra</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">11</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">46</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">32</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">11</td>
+                </tr>
+                <tr class="odd:bg-white even:bg-gray-50">
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">Combinatorics</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">4</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">19</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">31</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">46</td>
+                </tr>
+                <tr class="odd:bg-white even:bg-gray-50">
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">Geometry</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">13</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">44</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">32</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">11</td>
+                </tr>
+                <tr class="odd:bg-white even:bg-gray-50">
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">Number Theory</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">2</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">20</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">31</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">47</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
-        <blockquote class="my-6 italic">
-            <p class="mb-0 text-gray-600">Our simplified IMO ratings.</p>
-        </blockquote>
+    <blockquote class="my-6 italic">
+        <p class="mb-0 text-gray-600">Difficulty statistics for IMO-AnsBench.</p>
+    </blockquote>
 
-	<p>To ensure a robust evaluation, the dataset has been balanced with a roughly equal number of examples per category.When problems are grouped by their IMO difficulties, a clear trend emerges. The proportion of correct and almost solutions decreases as the intended difficulty moves from IMO-easy to IMO-hard, while the proportion of incorrect and partial solutions increases. This confirms that the grading distribution of IMO-GradingBench aligns with its assigned difficulty levels.</p>
-        <div class="my-8 flex justify-center">
-            <div class="bg-white p-4 rounded-xl shadow-lg">
-                <img src="imgs/imo_grading_bench.png" 
-                     alt="Distribution of human grades in IMO-GradingBench" 
-                     class="max-w-full h-auto rounded-lg">
-            </div>
+
+    <p>Problems were chosen from a variety of topics whose solutions require different problem solving techniques to ensure a diverse representation of topics, ideas, and domain knowledge as illustrated below.</p>
+    </div>
+
+    <div class="my-8 flex justify-center">
+        <div class="bg-white p-4 rounded-xl shadow-lg">
+            <img src="imgs/imo_answer_bench.png" 
+                 alt="IMO-AnswerBench Topic Distribution" 
+                 class="max-w-full h-auto rounded-lg">
+                 <blockquote class="mt-4 italic">
+                    <p class="mb-0 text-gray-600">Topic distribution by category in IMO-AnswerBench. Number Theory and Combinatorics have the most topics which reflect the broad knowledge required to solve these problems while Geometry is mostly skewed towards angle and sidelength computation problems due to the nature of the short answer benchmark.</p>
+                </blockquote>
         </div>
-        <blockquote class="my-6 italic">
-            <p class="mb-0 text-gray-600">Grade distribution for solutions in IMO-GradingBench by difficulty levels (IMO-Hard, IMO-Medium, IMO-Easy).</p>
-        </blockquote>
+    </div>
+
+    
 
 
-    </section>
+    <!-- IMO-GradingBench Subsection -->
+    <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 mt-8">
+        IMO-GradingBench
+    </h3>
+    <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed space-y-4">
+    <p>While IMO-ProofBench evaluates proof-writing abilities, it is equally important to assess models in terms of their ability to evaluate the correctness of given solutions. This capability is crucial for developing reliable automated grading systems and improving general mathematical reasoning. As part of our IMO effort, we have benchmarked extensively many internal models on the advanced set of IMO-Proof Bench using human evaluations. These human gradings led to the creation of <em>IMO-GradingBench</em> with 1000 examples, each containing a problem statement, a proposed solution, and its human-assigned grade (on a 0–7 scale). To reduce noise from fine-grained scoring, we frame the evaluation as a four-way classification by mapping the given IMO points to the labels (Correct, Almost, Partial, Incorrect) as detailed below.</p>
+    </div>
 
-    <!-- Leaderboard Section -->
-    <section class="mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
-            Leaderboards
-        </h2>
-        <div class="prose prose-lg max-w-none text-gray-900 leading-relaxed space-y-4">
-            <p>Our Gemini Deep Think (IMO Gold) model achieved an overall accuracy of <strong class="text-blue-600">80.0%</strong>, surpassing the best non-Gemini model (Grok 4) by 6.9% and the best open-weight model (DeepSeek R1) by 19.2%. Latest models such as GPT-5 are still struggling with overall accuracy of only 65.6% respectively. We show breakdowns of performances across the four categories (Algebra, Combinatorics, Geometry, Number Theory) in the figure below. Generally, models perform the worst in Combinatorics, potentially highlighting difficulties with advanced abstract reasoning.</p>
+<div class="my-8 mb-4 flex justify-center">
+    <div class="w-full md:w-[100%] overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200 overflow-hidden rounded-xl border border-gray-200 shadow">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th scope="col" class="px-6 py-3 text-left text-base font-semibold text-gray-600 uppercase tracking-wider">Category</th>
+                    <th scope="col" class="px-6 py-3 text-left text-base font-semibold text-gray-600 uppercase tracking-wider">IMO Points</th>
+                    <th scope="col" class="px-6 py-3 text-left text-base font-semibold text-gray-600 uppercase tracking-wider">Solution quality</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+                <tr class="odd:bg-white even:bg-gray-50">
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">Correct</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">7</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">Fully correct, rigorous, and complete</td>
+                </tr>
+                <tr class="odd:bg-white even:bg-gray-50">
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">Almost</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">6</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">Almost correct, minor errors</td>
+                </tr>
+                <tr class="odd:bg-white even:bg-gray-50">
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">Partial</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">1</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">Mostly incorrect, some relevant results</td>
+                </tr>
+                <tr class="odd:bg-white even:bg-gray-50">
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">Incorrect</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">0</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-base text-gray-900">Completely incorrect or irrelevant.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+    <blockquote class="my-6 italic">
+        <p class="mb-0 text-gray-600">Our simplified IMO ratings.</p>
+    </blockquote>
+
+<p>To ensure a robust evaluation, the dataset has been balanced with a roughly equal number of examples per category.When problems are grouped by their IMO difficulties, a clear trend emerges. The proportion of correct and almost solutions decreases as the intended difficulty moves from IMO-easy to IMO-hard, while the proportion of incorrect and partial solutions increases. This confirms that the grading distribution of IMO-GradingBench aligns with its assigned difficulty levels.</p>
+    <div class="my-8 flex justify-center">
+        <div class="bg-white p-4 rounded-xl shadow-lg">
+            <img src="imgs/imo_grading_bench.png" 
+                 alt="Distribution of human grades in IMO-GradingBench" 
+                 class="max-w-full h-auto rounded-lg">
+                 <blockquote class="mt-4 italic">
+                    <p class="mb-0 text-gray-600">Grade distribution for solutions in IMO-GradingBench by difficulty levels (IMO-Hard, IMO-Medium, IMO-Easy).</p>
+                </blockquote>
         </div>
+    </div>
+  
 
-        <div class="my-8 flex justify-center">
-            <div class="bg-white p-4 rounded-xl shadow-lg">
-                <img src="imgs/model_accuracy_answerbench.png" 
-                     alt="Model Accuracy on IMO-AnswerBench"
-                     class="max-w-full h-auto rounded-lg">
-            </div>
+
+</section>
+
+<!-- Leaderboard Section -->
+<section class="mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
+        Leaderboards
+    </h2>
+    <div class="prose prose-lg max-w-none text-gray-900 leading-relaxed space-y-4">
+        <p>Our Gemini Deep Think (IMO Gold) model achieved an overall accuracy of <strong class="text-blue-600">80.0%</strong>, surpassing the best non-Gemini model (Grok 4) by 6.9% and the best open-weight model (DeepSeek R1) by 19.2%. Latest models such as GPT-5 are still struggling with overall accuracy of only 65.6% respectively. We show breakdowns of performances across the four categories (Algebra, Combinatorics, Geometry, Number Theory) in the figure below. Generally, models perform the worst in Combinatorics, potentially highlighting difficulties with advanced abstract reasoning.</p>
+    </div>
+
+    <div class="my-8 flex justify-center">
+        <div class="bg-white p-4 rounded-xl shadow-lg">
+            <img src="imgs/model_accuracy_answerbench.png" 
+                 alt="Model Accuracy on IMO-AnswerBench"
+                 class="max-w-full h-auto rounded-lg">
+                 <blockquote class="border-blue-500 mt-4 rounded-r-lg  italic">
+                    <p class="mb-0 text-gray-600">Model accuracy on IMO-AnswerBench. Results are averaged over 8 runs, except for Gemini 2.5 Deep Think and Gemini Deep Think (IMO Gold) (single run).</p>
+                </blockquote>
         </div>
+    </div>
 
-        <blockquote class="border-blue-500 my-6 rounded-r-lg  italic">
-            <p class="mb-0 text-gray-600">Model accuracy on IMO-AnswerBench. Results are averaged over 8 runs, except for Gemini 2.5 Deep Think and Gemini Deep Think (IMO Gold) (single run).</p>
-        </blockquote>
+</section>
 
-
-    </section>
-
-    <!-- Citing Section -->
-    <section>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
-            Citing this work
-        </h2>
-        <div class="bg-gray-900 rounded-xl p-6 overflow-x-auto">
-            <pre class="text-gray-100 font-mono text-sm md:text-base leading-relaxed whitespace-pre-wrap"><code>@inproceedings{luong-etal-2025-towards,
-    title = "Towards Robust Mathematical Reasoning",
-    author  = {Thang Luong and Dawsen Hwang and Hoang H. Nguyen and Golnaz Ghiasi and Yuri Chervonyi and Insuk Seo and Junsu Kim and Garrett Bingham and Jonathan Lee and Swaroop Mishra and Alex Zhai and Clara Huiyi Hu and Henryk Michalewski and Jimin Kim and Jeonghyun Ahn and Junhwi Bae and Xingyou Song and Trieu H. Trinh and Quoc V. Le and Junehyuk Jung},
-    booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
-    year = "2025",
-    url = "https://aclanthology.org/2025.emnlp-main.1794/",
+<!-- Citing Section -->
+<section>
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
+        Citing this work
+    </h2>
+    <div class="bg-gray-900 rounded-xl p-6 overflow-x-auto">
+        <pre class="text-gray-100 font-mono text-sm md:text-base leading-relaxed whitespace-pre-wrap"><code>@inproceedings{luong-etal-2025-towards,
+title = "Towards Robust Mathematical Reasoning",
+author  = {Thang Luong and Dawsen Hwang and Hoang H. Nguyen and Golnaz Ghiasi and Yuri Chervonyi and Insuk Seo and Junsu Kim and Garrett Bingham and Jonathan Lee and Swaroop Mishra and Alex Zhai and Clara Huiyi Hu and Henryk Michalewski and Jimin Kim and Jeonghyun Ahn and Junhwi Bae and Xingyou Song and Trieu H. Trinh and Quoc V. Le and Junehyuk Jung},
+booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+year = "2025",
+url = "https://aclanthology.org/2025.emnlp-main.1794/",
 }
 </code></pre>
-        </div>
-    </section>
+    </div>
+</section>
 
 </div>
 </body>
