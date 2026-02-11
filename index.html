@@ -30,7 +30,6 @@
 <meta name="twitter:description" content="IMO-Bench is a suite of benchmarks for robust mathematical reasoning, including AnswerBench, ProofBench, and GradingBench, introduced at EMNLP 2025 by Thang Luong et. al., Google DeepMind.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = {
@@ -44,15 +43,12 @@
         }
     }
 </script>
-<!-- Load Phosphor Icons for the buttons -->
 <script src="https://unpkg.com/@phosphor-icons/web@2.0.3/dist/assets/index.js"></script>
 </head>
 <body class="bg-gray-900/5 text-gray-900 antialiased py-4" >
 <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 bg-white/95 rounded-2xl shadow-2xl ring-1 ring-black/5">
-    <!-- Header Logo -->
     <div class="mb-6 flex items-start justify-between border-b border-gray-200">
-         <!-- Main Title -->
-    <div class="mb-4 pb-4 ">
+         <div class="mb-4 pb-4 ">
         <img src="imgs/Google_DeepMind_Logo_rgb_3320x512px.png" 
         height="32" 
         class="h-8 sm:h-10 w-auto object-contain mb-6" >
@@ -61,7 +57,6 @@
     </div>
         <img src="imgs/logo-imobench.png" class="h-24 sm:h-24 w-auto rounded object-contain">
     </div>
-    <!-- AUTHORS -->
     <div class="text-base md:text-lg text-gray-800 mb-6 leading-relaxed">
         <p class="mb-2 text-base">
            
@@ -88,7 +83,6 @@
         </p>
     </div>
 
-    <!-- CORRESPONDENCE AND AFFILIATIONS -->
     <div class="text-sm md:text-base text-gray-600 space-y-2 mb-8 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
         <div>
             <sup class="text-blue-600 font-semibold">◊</sup>Corresponding authors: <a href="mailto:thangluong@google.com" class="text-blue-600 hover:text-blue-800 hover:underline">thangluong@google.com</a>, <a href="mailto:junehyuk@google.com" class="text-blue-600 hover:text-blue-800 hover:underline">junehyuk@google.com</a>.
@@ -98,9 +92,7 @@
         </div>
     </div>
 
-    <!-- NAVIGATION BUTTONS -->
- <div class="grid grid-cols-2 sm:flex sm:flex-wrap gap-4 mb-0">
-    <!-- Button 1: Paper -->
+    <div class="grid grid-cols-2 sm:flex sm:flex-wrap gap-4 mb-0">
     <a href="https://arxiv.org/abs/2511.01846"  target="_blank"
        class="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 text-sm sm:text-base font-medium text-blue-600 bg-white border border-blue-600 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -112,7 +104,6 @@
     </a>
 
    
-     <!-- Button 2: Dataset -->
      <a href="https://github.com/google-deepmind/superhuman/tree/main/imobench" target="_blank"
      class="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 text-sm sm:text-base font-medium text-blue-600 bg-white border border-blue-600 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
      <svg height="24" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" class="octicon octicon-mark-github v-align-middle">
@@ -120,7 +111,6 @@
   </svg>
       <span> Dataset</span>
   </a>
-   <!-- Button 3: Leaderboard -->
    <a href="#leaderboard" 
    class="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 text-sm sm:text-base font-medium text-blue-600 bg-white border border-blue-600 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -132,7 +122,6 @@
 </a>
 </div>
  
-    <!-- Introduction Section -->
     <section class="mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
             Introduction
@@ -149,7 +138,6 @@
       
     </section>
 
-    <!-- IMO-Bench at a glance Section -->
     <section class="mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
             IMO-Bench at a glance
@@ -192,7 +180,6 @@
         <p>A key highlight of our work is to show that autograders built with Gemini reasoning correlate well with human evaluations on IMO-ProofBench, as illustrated below, for a wide range of foundation models. This was achieved thanks to the accompanying grading schemes in IMO-Bench, which are suitable for both human experts and automated systems. We ultimately hope to steer the community's focus from final answers to the proofs themselves, enabling a more rigorous assessment of AI reasoning processes.</p>
      
 
- <!-- Main Plot Image -->
  <div class="my-8 flex justify-center">
    
     <div class="bg-white p-4 rounded-xl w-full md:w-[75%]">
@@ -206,7 +193,6 @@
  </div>
     </section>
 
-    <!-- IMO-ProofBench Section -->
     <section class="mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
             Beyond Short Answers with IMO-ProofBench
@@ -251,188 +237,14 @@
        
     </section>
 
-<!-- Leaderboard Section -->
 <section class="mb-12" id="leaderboard">
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
+	<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
         Leaderboard
     </h2>
-    <div class="prose prose-lg max-w-none text-gray-900 leading-relaxed space-y-4 mb-4">
-	<p>Here, we show a leaderboard of 15 systems on the advanced IMO-ProofBench.</p>
-    </div>
 
-
-    <div class="w-full md:w-[100%] overflow-x-auto">
-            <table class="min-w-full divide-y divide-gray-200 overflow-hidden rounded-xl border border-gray-200 shadow">
-                <thead class="bg-gray-50">
-                    <!-- These are the headers from your CSV data -->
-                    <tr>
-                        <th scope="col" rowspan="2" class="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider border-r border-gray-200">Model</th>
-                        <th scope="col" rowspan="2" class="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider border-r  text-center border-gray-200">Advanced ProofBench</th>
-                        <th scope="col" colspan="3" class="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider border-r border-b border-gray-200  text-center">Breakdown</th>
-                        <th scope="col" rowspan="2" class="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider border-gray-200  text-right">Query date</th>
-                    </tr>
-                    <tr>
-                        <th scope="col" class="px-2 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider border-r border-gray-200 w-[112px] text-center">Novel</th>
-                        <th scope="col" class="px-2 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider border-r border-gray-200  w-[112px] text-center">IMO 2024†</th>
-                        <th scope="col" class="px-2 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider border-r border-gray-200  w-[112px] text-center">USAMO 2025</th>
-                    </tr>
-                </thead>
-                <tbody class="bg-white divide-y divide-gray-200">
-                    <!-- Row 1 -->
-                    <tr class="odd:bg-white even:bg-gray-50">
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200"><a href="https://deepmind.google/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/" class="text-blue-600 hover:text-blue-800 hover:underline font-medium">Gemini Deep Think (IMO Gold)</a></td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200"><b>65.7%</b></td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r"><b>61.1%</b></td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r"><b>76.2%</b></td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">69.0%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-08-02</td>
-                    </tr>
-                    <!-- Row 2 -->
-                    <tr class="odd:bg-white even:bg-gray-50">
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200"><a href="https://blog.google/products/gemini/gemini-2-5-deep-think/" class="text-blue-600 hover:text-blue-800 hover:underline font-medium">Gemini Deep Think (IMO lite)</a></td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">37.6%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">31.7%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">40.5%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">52.4%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-08-20</td>
-                    </tr>
-                    <!-- Row 3 -->
-                    <tr class="odd:bg-white even:bg-gray-50">
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">Gemini 2.5 Pro with (<a href="https://arxiv.org/abs/2507.15855" class="text-blue-600 hover:text-blue-800 hover:underline font-medium">Huang & Yang, 2025</a>)</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">24.8%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">17.5%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">19.1%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">52.4%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-07-14</td>
-                    </tr>
-                    <!-- Row 4 -->
-                    <tr class="odd:bg-white even:bg-gray-50">
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">Grok 4 (heavy)</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">23.3%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">11.1%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">7.1%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200"><b>76.2%</b></td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-07-12</td>
-                    </tr>
-                    <!-- Row 5 -->
-                    <tr class="odd:bg-white even:bg-gray-50">
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">o3</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">20.5%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">15.1%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">4.8%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">52.4%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-08-04</td>
-                    </tr>
-                    <!-- Row 6 -->
-                    <tr class="odd:bg-white even:bg-gray-50">
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">GPT-5</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">20%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">15.9%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">33.3%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">19.0%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-09-18</td>
-                    </tr>
-                    <!-- Row 7 -->
-                    <tr class="odd:bg-white even:bg-gray-50">
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">Grok 4</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">18.6%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">17.5%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">16.7%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">23.8%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-08-20</td>
-                    </tr>
-                    <!-- Row 8 -->
-                    <tr class="odd:bg-white even:bg-gray-50">
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">Gemini 2.5 Pro</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">17.6%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">15.9%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">7.1%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">33.3%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-08-04</td>
-                    </tr>
-                    <!-- Row 9 -->
-                    <tr class="odd:bg-white even:bg-gray-50">
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">o4-mini (high reasoning)</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">11.4%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">8.7%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">7.1%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">23.8%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-08-04</td>
-                    </tr>
-                    <!-- Row 10 -->
-                    <tr class="odd:bg-white even:bg-gray-50">
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">Kimi-K2-Instruct</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">7.1%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">4%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">2.4%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">21.4%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-08-21</td>
-                    </tr>
-                    <!-- Row 11 -->
-                    <tr class="odd:bg-white even:bg-gray-50">
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">Qwen3-235B</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">5.2%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">7.1%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">0.0%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">4.8%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-08-21</td>
-                    </tr>
-                    <!-- Row 12 -->
-                    <tr class="odd:bg-white even:bg-gray-50">
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">Claude Sonnet 4</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">4.8%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">6.4%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">2.4%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">2.4%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-09-17</td>
-                    </tr>
-                    <!-- Row 13 -->
-                    <tr class="odd:bg-white even:bg-gray-50">
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">DeepSeek V3</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">4.3%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">6.3%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">2.4%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">0.0%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-09-16</td>
-                    </tr>
-                    <!-- Row 14 -->
-                    <tr class="odd:bg-white even:bg-gray-50">
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">DeepSeek R1</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">3.8%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">6.4%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">0.0%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">0.0%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-09-16</td>
-                    </tr>
-                    <!-- Row 15 -->
-                    <tr class="odd:bg-white even:bg-gray-50">
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">Claude Opus 4</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">2.9%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">0.0%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">2.4%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">11.9%</td>
-                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-08-04</td>
-                    </tr>
-                </tbody>
-            </table>
-        <blockquote class="my-6 italic text-center">
-            <p class="mb-0 text-gray-600">Expert evaluation results on the Advanced subset of IMO-Proof Bench. Scores are presented as a percentage of the total possible points for the problems in each respective subset, with each problem graded from 0–7. The Advanced IMO-Proof Bench is further broken down by problem source. †Robustified IMO 2024 problem set.</p>
-        </blockquote>
-    </div>
-
-    <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed space-y-4">
-	<p>A breakdown of the advanced IMO-Proof Bench reveals a significant performance disparity across problem types, suggesting potential overfitting in certain models. This trend is most evident with Grok 4 (heavy), which scores 76.2% on USAMO 2025 but only 11.1% on novel problems. Other models, including o3 (52.4% vs. 15.1%) and Gemini 2.5 Pro with (Huang & Yang, 2025) (52.4% vs. 17.5%), exhibit a similar, pronounced gap.</p>
-        <p>In contrast, Gemini Deep Think (IMO Gold) scored 69.0% on the USAMO and 61.1% on the novel sets, indicating it has more general capabilities without overfitting to a particular dataset. The low performances of latest frontier models such as GPT-5 and Grok 4 (heavy) on the advanced IMO-Proof Bench underscore the difficulty of advanced mathematical reasoning and highlight the importance of rigorous examination of the full details of model outputs for a complete understanding of their mathematical abilities.</p>
-    </div>
-
-</section>
-
-
-<!-- Latest Leaderboard Section -->
-<section class="mb-12" latest-leaderboard">
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
+    <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 mt-8">
         Latest Leaderboard
-    </h2>
+    </h3>
     <div class="prose prose-lg max-w-none text-gray-900 leading-relaxed space-y-4 mb-4">
         <p>Here is a leaderboard of the latest frontier models on IMO-ProofBench.</p>
     </div>
@@ -461,7 +273,6 @@
                     <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200"><b>83.3%</b></td>
                     <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right">2026-02-09</td>
                 </tr>
-                <!-- Row 1 -->
                 <tr class="odd:bg-white even:bg-gray-50">
                     <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">GPT-5.2 Thinking (high) </td>
                     <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">35.7%</td>
@@ -472,7 +283,6 @@
                 </tr>
 
 
-                <!-- Row 2 -->
                 <tr class="odd:bg-white even:bg-gray-50">
                     <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">
                         <a href="https://deepmind.google/models/gemini/pro/" class="text-blue-600 hover:text-blue-800 hover:underline font-medium">
@@ -489,7 +299,6 @@
                 </tr>
 
 
-                <!-- Row 3 -->
                 <tr class="odd:bg-white even:bg-gray-50">
                     <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">GPT-5 Pro</td>
                     <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">28.6%</td>
@@ -499,7 +308,6 @@
                     <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right">2025-11-26</td>
                 </tr>
 
-                <!-- Row 4 -->
                 <tr class="odd:bg-white even:bg-gray-50">
                     <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">Claude Opus 4.5</td>
                     <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">23.8%</td>
@@ -509,7 +317,6 @@
                     <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right">2026-01-14</td>
                 </tr>
 
-                <!-- Row 5 -->
                 <tr class="odd:bg-white even:bg-gray-50">
                     <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">Grok 4.1 Fast Reasoning</td>
                     <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">18.6%</td>
@@ -519,7 +326,6 @@
                     <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right">2025-11-26</td>
                 </tr>
 
-                <!-- Row 6 -->
                 <tr class="odd:bg-white even:bg-gray-50">
                     <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">GPT-5.1</td>
                     <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">7.1%</td>
@@ -531,16 +337,173 @@
             </tbody>
         </table>
     </div>
+
+    <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 mt-8">
+        Leaderboard September, 2025
+    </h3>
+    <div class="prose prose-lg max-w-none text-gray-900 leading-relaxed space-y-4 mb-4">
+	<p>Here, we show a leaderboard of 15 systems on the advanced IMO-ProofBench.</p>
+    </div>
+
+
+    <div class="w-full md:w-[100%] overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200 overflow-hidden rounded-xl border border-gray-200 shadow">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col" rowspan="2" class="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider border-r border-gray-200">Model</th>
+                        <th scope="col" rowspan="2" class="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider border-r  text-center border-gray-200">Advanced ProofBench</th>
+                        <th scope="col" colspan="3" class="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider border-r border-b border-gray-200  text-center">Breakdown</th>
+                        <th scope="col" rowspan="2" class="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider border-gray-200  text-right">Query date</th>
+                    </tr>
+                    <tr>
+                        <th scope="col" class="px-2 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider border-r border-gray-200 w-[112px] text-center">Novel</th>
+                        <th scope="col" class="px-2 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider border-r border-gray-200  w-[112px] text-center">IMO 2024†</th>
+                        <th scope="col" class="px-2 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider border-r border-gray-200  w-[112px] text-center">USAMO 2025</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200"><a href="https://deepmind.google/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/" class="text-blue-600 hover:text-blue-800 hover:underline font-medium">Gemini Deep Think (IMO Gold)</a></td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200"><b>65.7%</b></td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r"><b>61.1%</b></td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r"><b>76.2%</b></td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">69.0%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-08-02</td>
+                    </tr>
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200"><a href="https://blog.google/products/gemini/gemini-2-5-deep-think/" class="text-blue-600 hover:text-blue-800 hover:underline font-medium">Gemini Deep Think (IMO lite)</a></td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">37.6%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">31.7%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">40.5%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">52.4%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-08-20</td>
+                    </tr>
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">Gemini 2.5 Pro with (<a href="https://arxiv.org/abs/2507.15855" class="text-blue-600 hover:text-blue-800 hover:underline font-medium">Huang & Yang, 2025</a>)</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">24.8%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">17.5%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">19.1%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">52.4%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-07-14</td>
+                    </tr>
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">Grok 4 (heavy)</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">23.3%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">11.1%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">7.1%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200"><b>76.2%</b></td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-07-12</td>
+                    </tr>
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">o3</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">20.5%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">15.1%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">4.8%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">52.4%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-08-04</td>
+                    </tr>
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">GPT-5</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">20%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">15.9%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">33.3%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">19.0%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-09-18</td>
+                    </tr>
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">Grok 4</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">18.6%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">17.5%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">16.7%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">23.8%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-08-20</td>
+                    </tr>
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">Gemini 2.5 Pro</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">17.6%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">15.9%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">7.1%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">33.3%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-08-04</td>
+                    </tr>
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">o4-mini (high reasoning)</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">11.4%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">8.7%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">7.1%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">23.8%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-08-04</td>
+                    </tr>
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">Kimi-K2-Instruct</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">7.1%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">4%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">2.4%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">21.4%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-08-21</td>
+                    </tr>
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">Qwen3-235B</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">5.2%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">7.1%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">0.0%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">4.8%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-08-21</td>
+                    </tr>
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">Claude Sonnet 4</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">4.8%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">6.4%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">2.4%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">2.4%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-09-17</td>
+                    </tr>
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">DeepSeek V3</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">4.3%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">6.3%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">2.4%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">0.0%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-09-16</td>
+                    </tr>
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">DeepSeek R1</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">3.8%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">6.4%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">0.0%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">0.0%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-09-16</td>
+                    </tr>
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 border-r border-gray-200">Claude Opus 4</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">2.9%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">0.0%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r">2.4%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center border-r border-gray-200">11.9%</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-right ">2025-08-04</td>
+                    </tr>
+                </tbody>
+            </table>
+        <blockquote class="my-6 italic text-center">
+            <p class="mb-0 text-gray-600">Expert evaluation results on the Advanced subset of IMO-Proof Bench. Scores are presented as a percentage of the total possible points for the problems in each respective subset, with each problem graded from 0–7. The Advanced IMO-Proof Bench is further broken down by problem source. †Robustified IMO 2024 problem set.</p>
+        </blockquote>
+    </div>
+
+    <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed space-y-4">
+	<p>A breakdown of the advanced IMO-Proof Bench reveals a significant performance disparity across problem types, suggesting potential overfitting in certain models. This trend is most evident with Grok 4 (heavy), which scores 76.2% on USAMO 2025 but only 11.1% on novel problems. Other models, including o3 (52.4% vs. 15.1%) and Gemini 2.5 Pro with (Huang & Yang, 2025) (52.4% vs. 17.5%), exhibit a similar, pronounced gap.</p>
+        <p>In contrast, Gemini Deep Think (IMO Gold) scored 69.0% on the USAMO and 61.1% on the novel sets, indicating it has more general capabilities without overfitting to a particular dataset. The low performances of latest frontier models such as GPT-5 and Grok 4 (heavy) on the advanced IMO-Proof Bench underscore the difficulty of advanced mathematical reasoning and highlight the importance of rigorous examination of the full details of model outputs for a complete understanding of their mathematical abilities.</p>
+    </div>
+
 </section>
 
 
-<!-- Other Benchmarks Section -->
+
+
 <section class="mb-12">
     <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
         Other Benchmarks in IMO-Bench
     </h2>
 
-    <!-- IMO-AnswerBench Subsection -->
     <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 mt-8">
         IMO-AnswerBench
     </h3>
@@ -611,7 +574,6 @@
                 </blockquote>
         </div>
     </div>
-    <!-- IMO-GradingBench Subsection -->
     <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 mt-8">
         IMO-GradingBench
     </h3>
@@ -673,7 +635,6 @@
 
 </section>
 
-<!-- Citing Section -->
 <section>
     <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
         Citing this work
@@ -692,3 +653,4 @@ url = "https://aclanthology.org/2025.emnlp-main.1794/",
 
 </div>
 </body>
+</html>
