@@ -143,7 +143,7 @@
             IMO-Bench at a glance
         </h2>
         <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed space-y-4">
-            <p>IMO-Bench consists of three benchmarks that judge models on diverse capabilities: <em >IMO-AnswerBench</em> - a large-scale test on getting the right answer, <em>IMO-ProofBench</em> - a next-level evaluation for proof writing, and <em>IMO-GradingBench</em> to enable further progress in automatic evaluation of long-form answers.</p>
+            <p>IMO-Bench consists of four benchmarks that judge models on diverse capabilities: <em >IMO-AnswerBench</em> - a large-scale test on getting the right answer, <em>IMO-ProofBench</em> - a next-level evaluation for proof writing, <em>IMO-GradingBench</em> to enable further progress in automatic evaluation of long-form answers, and <em>IMO-LeanProofBench</em> - a formal theorem proving benchmark in Lean 4.</p>
         </div>
 
         <div class="my-8 flex justify-center">
@@ -171,6 +171,11 @@
                             <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900">IMO-GradingBench</td>
                             <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center">1,000</td>
                             <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900">Grade a proof</td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900">IMO-LeanProofBench</td>
+                            <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900 text-center">60</td>
+                            <td class="px-5 py-3 whitespace-nowrap text-base text-gray-900">Write a formal proof in Lean 4</td>
                         </tr>
                     </tbody>
                 </table>
@@ -668,19 +673,221 @@
 
 </section>
 
+<section id="imo-leanproofbench">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
+        Formalizing IMO-Bench: IMO-LeanProofBench
+    </h2>
+    <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed space-y-4">
+        <p>To push the boundaries of formal verification in mathematics, we introduce <strong>IMO-LeanProofBench</strong>, a complete manual formalization of the 60 IMO-ProofBench problems into <strong>Lean 4</strong>, vetted by Lean experts. IMO-LeanProofBench removes the overhead of complex modern theories to focus strictly on elementary statements requiring highly non-routine insights and structurally intricate proofs.</p>
+
+        <p>While frontier models successfully solve these problems in natural language, formal theorem proving in Lean remains a major bottleneck. In our paper, we show that general-purpose LLMs under one-shot proof generation setups struggle significantly, with Gemini 3.1 Pro solving only 11.6% overall (20% on basic and 3.3% on advanced problems).</p>
+
+        <p>To address this challenge, we introduced <strong>LEAP</strong>, an agentic framework that mimics human mathematicians by decomposing complex proof goals into informal blueprints (subgoals and proof ideas) and then refining the formal Lean proofs iteratively using compiler feedback. By executing search and backtracking in a search tree guided by Lean feedback, LEAP dramatically improves Olympiad-level theorem proving performance.</p>
+
+        <p>With LEAP, we achieve a new state-of-the-art overall solve rate of <strong>70.0%</strong> across IMO-LeanProofBench, solving 83.3% of the Basic subset and 56.7% of the Advanced subset, outperforming previous specialized ATP frameworks.</p>
+    </div>
+
+    <!-- LEAP Paper Box -->
+    <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 my-6">
+        <h4 class="text-xl font-bold text-gray-900 mb-2">
+            LEAP: Supercharging LLMs for Formal Mathematics with Agentic Frameworks
+        </h4>
+        <p class="text-gray-700 text-base mb-4 font-medium">
+            Po-Nien Kung, Linfeng Song, Dawsen Hwang, Jinsung Yoon, Chun-Liang Li, Simone Severini, Mirek Olšák, Edward Lockhart, Quoc V. Le, Burak Gokturk, Thang Luong, Tomas Pfister, and Nanyun Peng
+        </p>
+        <div class="flex flex-wrap gap-4">
+            <a href="https://arxiv.org/abs/2606.03303" target="_blank"
+               class="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-blue-600 bg-white border border-blue-600 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-150">
+               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.7997 2.21048C15.3897 1.80048 14.6797 2.08048 14.6797 2.65048V6.14048C14.6797 7.60048 15.9197 8.81048 17.4297 8.81048C18.3797 8.82048 19.6997 8.82048 20.8297 8.82048C21.3997 8.82048 21.6997 8.15048 21.2997 7.75048C19.8597 6.30048 17.2797 3.69048 15.7997 2.21048Z" fill="#4b5563"/>
+                <path d="M20.5 10.19H17.61C15.24 10.19 13.31 8.26 13.31 5.89V3C13.31 2.45 12.86 2 12.31 2H8.07C4.99 2 2.5 4 2.5 7.57V16.43C2.5 20 4.99 22 8.07 22H15.93C19.01 22 21.5 20 21.5 16.43V11.19C21.5 10.64 21.05 10.19 20.5 10.19ZM11.5 17.75H7.5C7.09 17.75 6.75 17.41 6.75 17C6.75 16.59 7.09 16.25 7.5 16.25H11.5C11.91 16.25 12.25 16.59 12.25 17C12.25 17.41 11.91 17.75 11.5 17.75ZM13.5 13.75H7.5C7.09 13.75 6.75 13.41 6.75 13C6.75 12.59 7.09 12.25 7.5 12.25H13.5C13.91 12.25 14.25 12.59 14.25 13C14.25 13.41 13.91 13.75 13.5 13.75Z" fill="#292D32"/>
+               </svg>
+               <span>Paper</span>
+            </a>
+            <a href="https://github.com/google-deepmind/superhuman/tree/main/leap/solutions" target="_blank"
+               class="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-blue-600 bg-white border border-blue-600 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-150">
+               <svg height="20" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="20" class="octicon octicon-mark-github v-align-middle">
+                 <path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"></path>
+               </svg>
+               <span>Solutions</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Basic Set Table -->
+    <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-4 mt-8 text-center">
+        IMO-LeanProofBench Basic Set
+    </h3>
+    <div class="my-6 flex justify-center">
+        <div class="w-full md:w-[95%] overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200 overflow-hidden rounded-xl border border-gray-200 shadow">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col" class="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider border-r border-gray-200">Method</th>
+                        <th scope="col" class="px-5 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider border-r border-gray-200">Algebra (8)</th>
+                        <th scope="col" class="px-5 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider border-r border-gray-200">Combinatorics (8)</th>
+                        <th scope="col" class="px-5 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider border-r border-gray-200">Number Theory (8)</th>
+                        <th scope="col" class="px-5 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider border-r border-gray-200">Geometry (6)</th>
+                        <th scope="col" class="px-5 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider border-r border-gray-200">Overall (30)</th>
+                        <th scope="col" class="px-5 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Overall (%)</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200 font-mono text-sm sm:text-base">
+                    <tr class="odd:bg-white even:bg-gray-50 bg-blue-50 font-semibold text-blue-900">
+                        <td class="px-5 py-3 whitespace-nowrap border-r border-gray-200 font-sans">LEAP (Agentic Prover)</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-center border-r border-gray-200">8</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-center border-r border-gray-200">8</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-center border-r border-gray-200">8</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-center border-r border-gray-200">1</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-center border-r border-gray-200">25</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-center text-blue-600 font-bold">83.3%</td>
+                    </tr>
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 border-r border-gray-200 font-sans font-medium text-gray-900">Aristotle (Olympiad ATP)</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">6</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">8</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">8</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">1</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">23</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center font-semibold">76.7%</td>
+                    </tr>
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 border-r border-gray-200 font-sans">Hilbert (Agentic Prover)</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">5</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">2</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">4</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">0</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">11</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center font-semibold">36.6%</td>
+                    </tr>
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 border-r border-gray-200 font-sans">Gemini 3.1 Pro (128-shot)</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">3</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">1</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">2</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">0</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">6</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center font-semibold">20.0%</td>
+                    </tr>
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 border-r border-gray-200 font-sans">Goedel-V2-32B (128-shot)</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">3</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">0</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">0</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">0</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">3</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center font-semibold">10.0%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Advanced Set Table -->
+    <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-4 mt-8 text-center">
+        IMO-LeanProofBench Advanced Set
+    </h3>
+    <div class="my-6 flex justify-center">
+        <div class="w-full md:w-[95%] overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200 overflow-hidden rounded-xl border border-gray-200 shadow">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col" class="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider border-r border-gray-200">Method</th>
+                        <th scope="col" class="px-5 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider border-r border-gray-200">Algebra (8)</th>
+                        <th scope="col" class="px-5 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider border-r border-gray-200">Combinatorics (8)</th>
+                        <th scope="col" class="px-5 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider border-r border-gray-200">Number Theory (6)</th>
+                        <th scope="col" class="px-5 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider border-r border-gray-200">Geometry (8)</th>
+                        <th scope="col" class="px-5 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider border-r border-gray-200">Overall (30)</th>
+                        <th scope="col" class="px-5 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Overall (%)</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200 font-mono text-sm sm:text-base">
+                    <tr class="odd:bg-white even:bg-gray-50 bg-blue-50 font-semibold text-blue-900">
+                        <td class="px-5 py-3 whitespace-nowrap border-r border-gray-200 font-sans">LEAP (Agentic Prover)</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-center border-r border-gray-200">8</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-center border-r border-gray-200">2</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-center border-r border-gray-200">6</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-center border-r border-gray-200">1</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-center border-r border-gray-200">17</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-center text-blue-600 font-bold">56.7%</td>
+                    </tr>
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 border-r border-gray-200 font-sans font-sans font-sans font-sans">Aristotle (Olympiad ATP)</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">3</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">1</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">2</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">0</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">6</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center font-semibold">20.0%</td>
+                    </tr>
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 border-r border-gray-200 font-sans font-sans font-sans">Hilbert (Agentic Prover)</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">1</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">0</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">1</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">0</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">2</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center font-semibold">6.6%</td>
+                    </tr>
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 border-r border-gray-200 font-sans font-sans">Gemini 3.1 Pro (128-shot)</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">0</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">1</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">0</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">0</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">1</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center font-semibold">3.3%</td>
+                    </tr>
+                    <tr class="odd:bg-white even:bg-gray-50">
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 border-r border-gray-200 font-sans">Goedel-V2-32B (128-shot)</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">0</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">0</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">0</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">0</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center border-r border-gray-200">0</td>
+                        <td class="px-5 py-3 whitespace-nowrap text-gray-900 text-center font-semibold">0.0%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+        <blockquote class="my-6 italic text-center">
+            <p class="mb-0 text-gray-600 text-sm">Note: The numbers in parentheses indicate the total number of problems in each category.<br>In the informal case, each problem can score 0-7, but in the formal case each problem can score 0 (unsolved) or 1 (solved).</p>
+        </blockquote>
+</section>
+
 <section>
     <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12 pb-3 border-b border-gray-200">
         Citing this work
     </h2>
-     <div class="bg-blue-50 rounded-xl p-6 overflow-x-auto border border-blue-500">
+
+    <p class="text-gray-600 mb-4 font-sans">
+        If you use the original IMO-Bench dataset or paper, please cite:
+    </p>
+    <div class="bg-blue-50 rounded-xl p-6 overflow-x-auto border border-blue-500 mb-6">
         <pre class="text-gray-900 font-mono text-sm md:text-base leading-relaxed whitespace-pre-wrap"><code>@inproceedings{luong-etal-2025-towards,
-title = "Towards Robust Mathematical Reasoning",
-author  = {Thang Luong and Dawsen Hwang and Hoang H. Nguyen and Golnaz Ghiasi and Yuri Chervonyi and Insuk Seo and Junsu Kim and Garrett Bingham and Jonathan Lee and Swaroop Mishra and Alex Zhai and Clara Huiyi Hu and Henryk Michalewski and Jimin Kim and Jeonghyun Ahn and Junhwi Bae and Xingyou Song and Trieu H. Trinh and Quoc V. Le and Junehyuk Jung},
-booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
-year = "2025",
-url = "https://aclanthology.org/2025.emnlp-main.1794/",
-}
-</code></pre>
+  title     = "Towards Robust Mathematical Reasoning",
+  author    = {Thang Luong and Dawsen Hwang and Hoang H. Nguyen and Golnaz Ghiasi and Yuri Chervonyi and Insuk Seo and Junsu Kim and Garrett Bingham and Jonathan Lee and Swaroop Mishra and Alex Zhai and Clara Huiyi Hu and Henryk Michalewski and Jimin Kim and Jeonghyun Ahn and Junhwi Bae and Xingyou Song and Trieu H. Trinh and Quoc V. Le and Junehyuk Jung},
+  booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+  year      = "2025",
+  url       = "https://aclanthology.org/2025.emnlp-main.1794/",
+}</code></pre>
+    </div>
+
+    <p class="text-gray-600 mb-4 font-sans">
+        If you use the IMO-LeanProofBench dataset or the LEAP agentic prover solutions, please cite:
+    </p>
+    <div class="bg-blue-50 rounded-xl p-6 overflow-x-auto border border-blue-500">
+        <pre class="text-gray-900 font-mono text-sm md:text-base leading-relaxed whitespace-pre-wrap"><code>@misc{kung2026leapsuperchargingllmsformal,
+      title={LEAP: Supercharging LLMs for Formal Mathematics with Agentic Frameworks}, 
+      author={Po-Nien Kung and Linfeng Song and Dawsen Hwang and Jinsung Yoon and Chun-Liang Li and Simone Severini and Mirek Olšák and Edward Lockhart and Quoc V Le and Burak Gokturk and Thang Luong and Tomas Pfister and Nanyun Peng},
+      year={2026},
+      eprint={2606.03303},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2606.03303}, 
+}</code></pre>
     </div>
 </section>
 
